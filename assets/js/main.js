@@ -320,7 +320,23 @@
       );
       const sidebar = document.querySelector(".app-sidebar");
 
-      if (toggleTrigger || sidebar?.contains(event.target)) {
+      // Handle sidebar toggle click
+      if (toggleTrigger) {
+        event.preventDefault();
+        const html = document.documentElement;
+        const currentToggled = html.getAttribute("data-toggled");
+        
+        if (currentToggled === "open") {
+          html.setAttribute("data-toggled", "close");
+          sidebar?.classList.remove("open");
+        } else {
+          html.setAttribute("data-toggled", "open");
+          sidebar?.classList.add("open");
+        }
+        return;
+      }
+
+      if (sidebar?.contains(event.target)) {
         return;
       }
 

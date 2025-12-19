@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-nav-layout="vertical" data-theme-mode="light" data-header-styles="transparent" data-width="fullwidth" data-menu-styles="transparent" data-page-style="flat" data-toggled="close">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>BizVisibility AI - Account Settings</title>
+    <meta name="Description" content="Account Settings">
+    <meta name="Author" content="BizVisibility AI">
+    
+    <link rel="icon" href="assets/images/brand-logos/favicon.ico" type="image/x-icon">
+    <script src="assets/libs/choices.js/public/assets/scripts/choices.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <link id="style" href="assets/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
+    <link href="assets/css/icons.css" rel="stylesheet">
+    <link href="assets/libs/node-waves/waves.min.css" rel="stylesheet">
+    <link href="assets/libs/simplebar/simplebar.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="page">
+        <!-- Header -->
+        <header class="app-header sticky">
+            <div class="main-header-container container-fluid">
+                <!-- Left side: Logo and Hamburger -->
+                <div class="header-content-left">
+                    <div class="header-element">
+                        <div class="horizontal-logo">
+                            <a href="dashboard.html" class="header-logo">
+                                <img src="assets/images/brand-logos/desktop-logo.png" alt="logo" class="desktop-logo">
+                                <img src="assets/images/brand-logos/desktop-dark.png" alt="logo" class="desktop-dark">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="header-element">
+                        <a aria-label="Hide Sidebar" class="sidemenu-toggle header-link animated-arrow hor-toggle horizontal-navtoggle" data-bs-toggle="sidebar" href="javascript:void(0);"><span></span></a>
+                    </div>
+                </div>
+                
+                <!-- Right side: Icons and Profile -->
+                <ul class="header-content-right">
+                    <!-- Dark Mode Toggle -->
+                    <li class="header-element header-theme-mode">
+                        <a href="javascript:void(0);" class="header-link layout-setting">
+                            <span class="light-layout">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="header-link-icon" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><path d="M108.11,28.11A96.09,96.09,0,0,0,227.89,147.89,96,96,0,1,1,108.11,28.11Z" opacity="0.2"/><path d="M108.11,28.11A96.09,96.09,0,0,0,227.89,147.89,96,96,0,1,1,108.11,28.11Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                            </span>
+                            <span class="dark-layout">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="header-link-icon" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><circle cx="128" cy="128" r="56" opacity="0.2"/><line x1="128" y1="40" x2="128" y2="32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><circle cx="128" cy="128" r="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="64" y1="64" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="64" y1="192" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="192" y1="64" x2="200" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="192" y1="192" x2="200" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="40" y1="128" x2="32" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="128" y1="216" x2="128" y2="224" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="216" y1="128" x2="224" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                            </span>
+                        </a>
+                    </li>
+
+                    <!-- Profile Dropdown -->
+                    <li class="header-element dropdown">
+                        <a href="javascript:void(0);" class="header-link dropdown-toggle" id="mainHeaderProfile" data-bs-toggle="dropdown" data-bs-auto-close="outside">
+                            <div>
+                                <img src="assets/images/faces/12.jpg" alt="img" class="header-link-icon">
+                            </div>
+                        </a>
+                        <div class="main-header-dropdown dropdown-menu pt-0 overflow-hidden header-profile-dropdown dropdown-menu-end" aria-labelledby="mainHeaderProfile">
+                            <div class="p-3 bg-primary text-fixed-white">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <p class="mb-0 fs-16">Profile</p>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <div class="p-3">
+                                <div class="d-flex align-items-start gap-2">
+                                    <div class="lh-1">
+                                        <span class="avatar avatar-sm bg-primary-transparent avatar-rounded">
+                                            <img src="assets/images/faces/12.jpg" alt="">
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span class="d-block fw-semibold lh-1">User Name</span>
+                                        <span class="text-muted fs-12">user@bizvisibility.com</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <ul class="list-unstyled mb-0">
+                                <li>
+                                    <a class="dropdown-item d-flex align-items-center" href="profile.html"><i class="ri-user-circle-line me-2"></i>View Profile</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item d-flex align-items-center" href="profile-settings.html"><i class="ri-settings-gear-line me-2"></i>Account Settings</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item d-flex align-items-center" href="login.html"><i class="ri-logout-box-line me-2"></i>Log Out</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        
+        <!-- Sidebar -->
+        <aside class="app-sidebar sticky" id="sidebar">
+            <div class="main-sidebar-header">
+                <a href="dashboard.html" class="header-logo">
+                    <img src="assets/images/brand-logos/desktop-logo.png" alt="logo" class="desktop-logo">
+                    <img src="assets/images/brand-logos/desktop-dark.png" alt="logo" class="desktop-dark">
+                </a>
+            </div>
+            
+            <div class="main-sidebar" id="sidebar-scroll">
+                <nav class="main-menu-container nav nav-pills flex-column sub-open">
+                    <ul class="main-menu">
+                        <li class="slide">
+                            <a href="dashboard.html" class="side-menu__item">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><path d="M133.66,34.34a8,8,0,0,0-11.32,0L40,116.69V216h64V152h48v64h64V116.69Z" opacity="0.2"/><line x1="16" y1="216" x2="240" y2="216" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><polyline points="152 216 152 152 104 152 104 216" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="40" y1="116.69" x2="40" y2="216" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="216" y1="216" x2="216" y2="116.69" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M24,132.69l98.34-98.35a8,8,0,0,1,11.32,0L232,132.69" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                                <span class="side-menu__label">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="slide">
+                            <a href="start-audit.html" class="side-menu__item">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><polygon points="216 216 80 216 160 24 216 216" opacity="0.2"/><polyline points="16 216 80 40 160 24 240 216" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                                <span class="side-menu__label">Start Audit</span>
+                            </a>
+                        </li>
+                        <li class="slide">
+                            <a href="audit-history.html" class="side-menu__item">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><circle cx="128" cy="128" r="96" opacity="0.2"/><circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><polyline points="128 72 128 128 176 168" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                                <span class="side-menu__label">Audit History</span>
+                            </a>
+                        </li>
+                        <li class="slide">
+                            <a href="pricing-app.html" class="side-menu__item">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><path d="M224,80H160v96a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V80H32a8,8,0,0,1,0-16H224a8,8,0,0,1,0,16Z" opacity="0.2"/><line x1="80" y1="40" x2="80" y2="80" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="128" y1="40" x2="128" y2="80" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="176" y1="40" x2="176" y2="80" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><rect x="40" y="80" width="176" height="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                                <span class="side-menu__label">My Plan</span>
+                            </a>
+                        </li>
+                        <li class="slide">
+                            <a href="support.html" class="side-menu__item">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><circle cx="128" cy="96" r="36" opacity="0.2"/><circle cx="128" cy="96" r="36" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M216,160c0,32-37.25,56-88,56s-88-24-88-56m32-16a20,20,0,1,1,20-20A20,20,0,0,1,160,144Z" opacity="0.2"/><circle cx="188" cy="128" r="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M216,160c0,32-37.25,56-88,56s-88-24-88-56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><circle cx="128" cy="96" r="36" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                                <span class="side-menu__label">Support</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <div class="main-content app-content">
+            <div class="container-fluid page-container">
+                <div class="row mb-5">
+                    <div class="col-12">
+                        <h1 class="page-title fw-bold mb-2">Account Settings</h1>
+                        <p class="text-muted">Manage your account preferences and security settings</p>
+                    </div>
+                </div>
+                
+                <!-- Settings Tabs -->
+                <div class="row">
+                    <div class="col-12">
+                        <ul class="nav nav-tabs mb-4" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="general-tab" data-bs-toggle="tab" data-bs-target="#general" type="button" role="tab" aria-controls="general" aria-selected="true">
+                                    <i class="ri-settings-line me-2"></i>General
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="security-tab" data-bs-toggle="tab" data-bs-target="#security" type="button" role="tab" aria-controls="security" aria-selected="false">
+                                    <i class="ri-shield-lock-line me-2"></i>Security
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="billing-tab" data-bs-toggle="tab" data-bs-target="#billing" type="button" role="tab" aria-controls="billing" aria-selected="false">
+                                    <i class="ri-bank-card-line me-2"></i>Billing
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="notifications-tab" data-bs-toggle="tab" data-bs-target="#notifications" type="button" role="tab" aria-controls="notifications" aria-selected="false">
+                                    <i class="ri-notification-line me-2"></i>Notifications
+                                </button>
+                            </li>
+                        </ul>
+                        
+                        <div class="tab-content">
+                            <!-- General Settings -->
+                            <div class="tab-pane fade show active" id="general" role="tabpanel" aria-labelledby="general-tab">
+                                <div class="card custom-card">
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="row mb-3">
+                                                <div class="col-md-6">
+                                                    <label class="form-label">First Name</label>
+                                                    <input type="text" class="form-control" value="John" placeholder="First Name">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label">Last Name</label>
+                                                    <input type="text" class="form-control" value="Doe" placeholder="Last Name">
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Email Address</label>
+                                                <input type="email" class="form-control" value="user@bizvisibility.com" placeholder="Email">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Phone Number</label>
+                                                <input type="tel" class="form-control" value="+1 (555) 123-4567" placeholder="Phone">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Language</label>
+                                                <select class="form-select">
+                                                    <option selected>English</option>
+                                                    <option>Spanish</option>
+                                                    <option>French</option>
+                                                    <option>German</option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Timezone</label>
+                                                <select class="form-select">
+                                                    <option selected>Eastern Standard Time (EST)</option>
+                                                    <option>Central Standard Time (CST)</option>
+                                                    <option>Mountain Standard Time (MST)</option>
+                                                    <option>Pacific Standard Time (PST)</option>
+                                                </select>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Security Settings -->
+                            <div class="tab-pane fade" id="security" role="tabpanel" aria-labelledby="security-tab">
+                                <div class="card custom-card">
+                                    <div class="card-body">
+                                        <h6 class="fw-semibold mb-4">Password</h6>
+                                        <form class="mb-4">
+                                            <div class="mb-3">
+                                                <label class="form-label">Current Password</label>
+                                                <input type="password" class="form-control" placeholder="Enter current password">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">New Password</label>
+                                                <input type="password" class="form-control" placeholder="Enter new password">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Confirm Password</label>
+                                                <input type="password" class="form-control" placeholder="Confirm new password">
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Update Password</button>
+                                        </form>
+                                        
+                                        <hr>
+                                        
+                                        <h6 class="fw-semibold mb-3 mt-4">Two-Factor Authentication</h6>
+                                        <p class="text-muted mb-3">Add an extra layer of security to your account</p>
+                                        <button class="btn btn-primary" onclick="alert('2FA setup coming soon')">Enable 2FA</button>
+                                        
+                                        <hr>
+                                        
+                                        <h6 class="fw-semibold mb-3 mt-4">Login History</h6>
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Device</th>
+                                                        <th>IP Address</th>
+                                                        <th>Last Accessed</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Chrome on Windows</td>
+                                                        <td>192.168.1.1</td>
+                                                        <td>Today</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Safari on iPhone</td>
+                                                        <td>192.168.1.2</td>
+                                                        <td>Yesterday</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Billing Settings -->
+                            <div class="tab-pane fade" id="billing" role="tabpanel" aria-labelledby="billing-tab">
+                                <div class="card custom-card">
+                                    <div class="card-body">
+                                        <h6 class="fw-semibold mb-3">Current Plan</h6>
+                                        <div class="mb-4 p-3 bg-light rounded">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <h6 class="fw-semibold mb-1">Professional Plan</h6>
+                                                    <p class="text-muted mb-0">$99/month - Next billing: January 19, 2025</p>
+                                                </div>
+                                                <button class="btn btn-primary btn-sm">Change Plan</button>
+                                            </div>
+                                        </div>
+                                        
+                                        <h6 class="fw-semibold mb-3">Payment Method</h6>
+                                        <div class="mb-4 p-3 bg-light rounded">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <i class="ri-visa-line me-2 fs-20"></i>
+                                                    <span class="fw-semibold">Visa ending in 4242</span>
+                                                    <p class="text-muted mb-0 mt-1">Expires 12/2026</p>
+                                                </div>
+                                                <button class="btn btn-secondary btn-sm">Update</button>
+                                            </div>
+                                        </div>
+                                        
+                                        <h6 class="fw-semibold mb-3">Billing History</h6>
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Date</th>
+                                                        <th>Description</th>
+                                                        <th>Amount</th>
+                                                        <th>Status</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Dec 19, 2024</td>
+                                                        <td>Professional Plan - Monthly</td>
+                                                        <td>$99.00</td>
+                                                        <td><span class="badge bg-success">Paid</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Nov 19, 2024</td>
+                                                        <td>Professional Plan - Monthly</td>
+                                                        <td>$99.00</td>
+                                                        <td><span class="badge bg-success">Paid</span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Notification Settings -->
+                            <div class="tab-pane fade" id="notifications" role="tabpanel" aria-labelledby="notifications-tab">
+                                <div class="card custom-card">
+                                    <div class="card-body">
+                                        <h6 class="fw-semibold mb-4">Email Notifications</h6>
+                                        
+                                        <div class="mb-3">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="audit-notifications" checked>
+                                                <label class="form-check-label" for="audit-notifications">
+                                                    <strong>Audit Completion</strong>
+                                                    <p class="text-muted fs-13 mb-0">Get notified when your audits are complete</p>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="weekly-reports" checked>
+                                                <label class="form-check-label" for="weekly-reports">
+                                                    <strong>Weekly Reports</strong>
+                                                    <p class="text-muted fs-13 mb-0">Receive weekly summary reports</p>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="billing-alerts">
+                                                <label class="form-check-label" for="billing-alerts">
+                                                    <strong>Billing Alerts</strong>
+                                                    <p class="text-muted fs-13 mb-0">Get notified about billing updates</p>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="product-updates" checked>
+                                                <label class="form-check-label" for="product-updates">
+                                                    <strong>Product Updates</strong>
+                                                    <p class="text-muted fs-13 mb-0">Learn about new features and updates</p>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        
+                                        <button class="btn btn-primary mt-4">Save Preferences</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Theme mode toggle
+        document.querySelector('.layout-setting').addEventListener('click', function(e) {
+            e.preventDefault();
+            const html = document.documentElement;
+            const currentMode = html.getAttribute('data-theme-mode');
+            const newMode = currentMode === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme-mode', newMode);
+            localStorage.setItem('themeMode', newMode);
+        });
+
+        // Initialize theme from localStorage
+        const savedTheme = localStorage.getItem('themeMode') || 'light';
+        document.documentElement.setAttribute('data-theme-mode', savedTheme);
+    </script>
+</body>
+
+</html>
