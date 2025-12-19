@@ -1,167 +1,134 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr" data-nav-layout="vertical" data-theme-mode="light" data-header-styles="transparent" data-width="fullwidth" data-menu-styles="transparent" data-page-style="flat" data-toggled="close">
+
 <head>
     <meta charset="UTF-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>BizVisibility AI - API Keys</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #dd9933;
-            --primary-light: #f5a950;
-        }
-        
-        body {
-            background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
-        }
-        
-        .app-header {
-            background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-light) 100%);
-            padding: 1rem;
-            color: white;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        
-        .page-title {
-            color: var(--primary-color);
-            font-weight: 600;
-        }
-        
-        .card {
-            border: none;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            margin-bottom: 1.5rem;
-        }
-        
-        .card-header {
-            background: linear-gradient(90deg, rgba(221, 153, 51, 0.1) 0%, rgba(245, 169, 80, 0.05) 100%);
-            border-bottom: 2px solid var(--primary-color);
-        }
-        
-        .btn-primary {
-            background: var(--primary-color);
-            border-color: var(--primary-color);
-        }
-        
-        .btn-primary:hover {
-            background: var(--primary-light);
-            border-color: var(--primary-light);
-        }
-        
-        .form-label {
-            font-weight: 500;
-            color: #333;
-            margin-bottom: 0.5rem;
-        }
-        
-        .input-group .btn-outline-secondary {
-            color: var(--primary-color);
-            border-color: #ddd;
-        }
-        
-        .input-group .btn-outline-secondary:hover {
-            background: var(--primary-color);
-            border-color: var(--primary-color);
-            color: white;
-        }
-        
-        .alert-success {
-            background-color: #d4edda;
-            border-color: #c3e6cb;
-            color: #155724;
-        }
-        
-        .alert-info {
-            background-color: #d1ecf1;
-            border-color: #bee5eb;
-            color: #0c5460;
-        }
-        
-        .sidebar {
-            background: white;
-            padding: 1rem 0;
-            border-right: 1px solid #ddd;
-        }
-        
-        .nav-item {
-            margin-bottom: 0.5rem;
-        }
-        
-        .nav-link {
-            color: #333;
-            padding: 0.75rem 1rem;
-            border-left: 3px solid transparent;
-            transition: all 0.3s ease;
-        }
-        
-        .nav-link:hover {
-            background: rgba(221, 153, 51, 0.1);
-            border-left-color: var(--primary-color);
-            color: var(--primary-color);
-        }
-        
-        .nav-link.active {
-            background: rgba(221, 153, 51, 0.15);
-            border-left-color: var(--primary-color);
-            color: var(--primary-color);
-            font-weight: 600;
-        }
-        
-        .page-wrapper {
-            padding: 2rem;
-        }
-        
-        .sidebar-title {
-            padding: 1rem;
-            font-weight: 600;
-            color: var(--primary-color);
-            border-bottom: 1px solid #ddd;
-        }
-    </style>
+    <link rel="icon" href="../assets/images/brand-logos/favicon.ico" type="image/x-icon">
+    <script src="../assets/libs/choices.js/public/assets/scripts/choices.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <link id="style" href="../assets/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/styles.css" rel="stylesheet">
+    <link href="../assets/css/icons.css" rel="stylesheet">
+    <link href="../assets/libs/node-waves/waves.min.css" rel="stylesheet">
+    <link href="../assets/libs/simplebar/simplebar.min.css" rel="stylesheet">
 </head>
-<body>
-    <!-- Header -->
-    <header class="app-header sticky-top">
-        <div class="container-fluid">
-            <div class="d-flex justify-content-between align-items-center">
-                <h4 class="mb-0">🔐 BizVisibility AI Admin</h4>
-                <div>
-                    <span class="me-3">Profile Settings</span>
-                    <a href="../login.html" class="text-white">Sign out</a>
-                </div>
-            </div>
-        </div>
-    </header>
 
-    <div class="container-fluid">
-        <div class="row">
-            <!-- Sidebar -->
-            <div class="col-md-2 sidebar">
-                <div class="sidebar-title">Navigation</div>
-                <nav class="nav flex-column">
-                    <a class="nav-link" href="dashboard.html">📊 Dashboard</a>
-                    <a class="nav-link" href="users.html">👥 Users & Businesses</a>
-                    <a class="nav-link" href="plans.html">💳 Plans</a>
-                    <a class="nav-link active" href="api-keys.html">🔑 API Keys</a>
+<body>
+    <div class="page">
+        <!-- Header -->
+        <header class="app-header sticky">
+            <div class="main-header-container container-fluid">
+                <div class="header-content-left">
+                    <div class="header-element">
+                        <div class="horizontal-logo">
+                            <a href="dashboard.html" class="header-logo">
+                                <img src="../assets/images/brand-logos/desktop-logo.png" alt="logo" class="desktop-logo">
+                                <img src="../assets/images/brand-logos/desktop-dark.png" alt="logo" class="desktop-dark">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="header-element">
+                        <a aria-label="Hide Sidebar" class="sidemenu-toggle header-link animated-arrow hor-toggle horizontal-navtoggle" data-bs-toggle="sidebar" href="javascript:void(0);"><span></span></a>
+                    </div>
+                </div>
+                
+                <ul class="header-content-right">
+                    <li class="header-element header-theme-mode">
+                        <a href="javascript:void(0);" class="header-link layout-setting">
+                            <span class="light-layout">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="header-link-icon" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><path d="M108.11,28.11A96.09,96.09,0,0,0,227.89,147.89,96,96,0,1,1,108.11,28.11Z" opacity="0.2"/><path d="M108.11,28.11A96.09,96.09,0,0,0,227.89,147.89,96,96,0,1,1,108.11,28.11Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                            </span>
+                            <span class="dark-layout">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="header-link-icon" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><circle cx="128" cy="128" r="56" opacity="0.2"/><line x1="128" y1="40" x2="128" y2="32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><circle cx="128" cy="128" r="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="64" y1="64" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="64" y1="192" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="192" y1="64" x2="200" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="192" y1="192" x2="200" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="40" y1="128" x2="32" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="128" y1="216" x2="128" y2="224" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="216" y1="128" x2="224" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="header-element dropdown">
+                        <a href="javascript:void(0);" class="header-link dropdown-toggle" id="mainHeaderProfile" data-bs-toggle="dropdown" data-bs-auto-close="outside">
+                            <div>
+                                <img src="../assets/images/faces/12.jpg" alt="img" class="header-link-icon">
+                            </div>
+                        </a>
+                        <div class="main-header-dropdown dropdown-menu pt-0 overflow-hidden header-profile-dropdown dropdown-menu-end" aria-labelledby="mainHeaderProfile">
+                            <div class="p-3 bg-primary text-fixed-white">
+                                <p class="mb-0 fs-16">Admin Profile</p>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <ul class="list-unstyled mb-0">
+                                <li>
+                                    <a class="dropdown-item d-flex align-items-center" href="profile-settings.html"><i class="ri-settings-gear-line me-2"></i>Admin Settings</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item d-flex align-items-center" href="../login.html"><i class="ri-logout-box-line me-2"></i>Log Out</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        
+        <!-- Sidebar -->
+        <aside class="app-sidebar sticky" id="sidebar">
+            <div class="main-sidebar-header">
+                <a href="dashboard.html" class="header-logo">
+                    <img src="../assets/images/brand-logos/desktop-logo.png" alt="logo" class="desktop-logo">
+                    <img src="../assets/images/brand-logos/desktop-dark.png" alt="logo" class="desktop-dark">
+                </a>
+            </div>
+            
+            <div class="main-sidebar has-footer" id="sidebar-scroll">
+                <nav class="main-menu-container nav nav-pills flex-column sub-open">
+                    <ul class="main-menu">
+                        <li class="slide">
+                            <a href="dashboard.html" class="side-menu__item">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><path d="M133.66,34.34a8,8,0,0,0-11.32,0L40,116.69V216h64V152h48v64h64V116.69Z" opacity="0.2"/><line x1="16" y1="216" x2="240" y2="216" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><polyline points="152 216 152 152 104 152 104 216" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="40" y1="116.69" x2="40" y2="216" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="216" y1="216" x2="216" y2="116.69" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M24,132.69l98.34-98.35a8,8,0,0,1,11.32,0L232,132.69" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                                <span class="side-menu__label">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="slide">
+                            <a href="users.html" class="side-menu__item">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><circle cx="88" cy="104" r="40" opacity="0.2"/><circle cx="88" cy="104" r="40" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M16,216a64,64,0,0,1,144,0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><circle cx="168" cy="120" r="32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M131.37,203a56,56,0,0,1,89.26,0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                                <span class="side-menu__label">Users & Businesses</span>
+                            </a>
+                        </li>
+                        <li class="slide">
+                            <a href="plans.html" class="side-menu__item">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><path d="M48,120h160V80a8,8,0,0,0-8-8H56a8,8,0,0,0-8,8Z" opacity="0.2"/><rect x="48" y="72" width="160" height="112" rx="8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M80,184v16a8,8,0,0,1-8,8H64a8,8,0,0,1-8-8v-16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M176,184v16a8,8,0,0,0,8,8h8a8,8,0,0,0,8-8v-16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="96" y1="120" x2="96" y2="168" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="160" y1="120" x2="160" y2="168" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                                <span class="side-menu__label">Plans</span>
+                            </a>
+                        </li>
+                        <li class="slide">
+                            <a href="api-keys.html" class="side-menu__item active">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><path d="M216,56H40A16,16,0,0,0,24,72V184a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V72A16,16,0,0,0,216,56Zm0,128H40V72H216v112Z" opacity="0.2"/><rect x="40" y="56" width="176" height="128" rx="8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><circle cx="120" cy="120" r="16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M80,120a40,40,0,0,1,80,0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                                <span class="side-menu__label">API Keys</span>
+                            </a>
+                        </li>
+                    </ul>
                 </nav>
             </div>
+        </aside>
 
-            <!-- Main Content -->
-            <div class="col-md-10 page-wrapper">
-                <div class="row mb-4">
-                    <div class="col">
-                        <h2 class="page-title mb-2">API Keys Management</h2>
+        <!-- Main Content -->
+        <div class="main-content app-content">
+            <div class="container-fluid page-container">
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                    <div>
+                        <h1 class="page-title fw-bold mb-0">API Keys Management</h1>
                         <p class="text-muted">View and manage API keys for your application</p>
                     </div>
                 </div>
 
-                <!-- Alerts -->
+                <!-- Alerts Container -->
                 <div id="alertContainer"></div>
 
                 <!-- OpenAI Configuration -->
-                <div class="card">
+                <div class="card custom-card">
                     <div class="card-header">
-                        <h5 class="card-title mb-0">OpenAI Configuration</h5>
+                        <h5 class="card-title mb-0"><i class="ri-openai-fill me-2"></i>OpenAI Configuration</h5>
                     </div>
                     <div class="card-body">
                         <div class="row">
@@ -169,7 +136,7 @@
                                 <label for="openaiApiKey" class="form-label">API Key</label>
                                 <div class="input-group">
                                     <input type="password" class="form-control" id="openaiApiKey" placeholder="Enter OpenAI API Key">
-                                    <button class="btn btn-outline-secondary" type="button" onclick="toggleKeyVisibility('openaiApiKey')">👁️</button>
+                                    <button class="btn btn-outline-secondary" type="button" onclick="toggleKeyVisibility('openaiApiKey')"><i class="ri-eye-line"></i></button>
                                 </div>
                             </div>
                             <div class="col-md-6 mb-3">
@@ -185,9 +152,9 @@
                 </div>
 
                 <!-- LLM Provider Selection -->
-                <div class="card">
+                <div class="card custom-card">
                     <div class="card-header">
-                        <h5 class="card-title mb-0">LLM Provider</h5>
+                        <h5 class="card-title mb-0"><i class="ri-settings-3-line me-2"></i>LLM Provider</h5>
                     </div>
                     <div class="card-body">
                         <label for="llmProvider" class="form-label">Select Provider</label>
@@ -199,9 +166,9 @@
                 </div>
 
                 <!-- OpenRouter Configuration -->
-                <div class="card">
+                <div class="card custom-card">
                     <div class="card-header">
-                        <h5 class="card-title mb-0">OpenRouter Configuration</h5>
+                        <h5 class="card-title mb-0"><i class="ri-router-line me-2"></i>OpenRouter Configuration</h5>
                     </div>
                     <div class="card-body">
                         <div class="row">
@@ -209,7 +176,7 @@
                                 <label for="openrouterApiKey" class="form-label">API Key</label>
                                 <div class="input-group">
                                     <input type="password" class="form-control" id="openrouterApiKey" placeholder="Enter OpenRouter API Key">
-                                    <button class="btn btn-outline-secondary" type="button" onclick="toggleKeyVisibility('openrouterApiKey')">👁️</button>
+                                    <button class="btn btn-outline-secondary" type="button" onclick="toggleKeyVisibility('openrouterApiKey')"><i class="ri-eye-line"></i></button>
                                 </div>
                             </div>
                             <div class="col-md-6 mb-3">
@@ -233,9 +200,9 @@
                 </div>
 
                 <!-- External APIs -->
-                <div class="card">
+                <div class="card custom-card">
                     <div class="card-header">
-                        <h5 class="card-title mb-0">External APIs</h5>
+                        <h5 class="card-title mb-0"><i class="ri-global-line me-2"></i>External APIs</h5>
                     </div>
                     <div class="card-body">
                         <div class="row">
@@ -243,28 +210,28 @@
                                 <label for="pagespeedApiKey" class="form-label">PageSpeed Insights API Key</label>
                                 <div class="input-group">
                                     <input type="password" class="form-control" id="pagespeedApiKey" placeholder="Enter PageSpeed API Key">
-                                    <button class="btn btn-outline-secondary" type="button" onclick="toggleKeyVisibility('pagespeedApiKey')">👁️</button>
+                                    <button class="btn btn-outline-secondary" type="button" onclick="toggleKeyVisibility('pagespeedApiKey')"><i class="ri-eye-line"></i></button>
                                 </div>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="serperApiKey" class="form-label">Serper API Key</label>
                                 <div class="input-group">
                                     <input type="password" class="form-control" id="serperApiKey" placeholder="Enter Serper API Key">
-                                    <button class="btn btn-outline-secondary" type="button" onclick="toggleKeyVisibility('serperApiKey')">👁️</button>
+                                    <button class="btn btn-outline-secondary" type="button" onclick="toggleKeyVisibility('serperApiKey')"><i class="ri-eye-line"></i></button>
                                 </div>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="googlePlacesApiKey" class="form-label">Google Places API Key</label>
                                 <div class="input-group">
                                     <input type="password" class="form-control" id="googlePlacesApiKey" placeholder="Enter Google Places API Key">
-                                    <button class="btn btn-outline-secondary" type="button" onclick="toggleKeyVisibility('googlePlacesApiKey')">👁️</button>
+                                    <button class="btn btn-outline-secondary" type="button" onclick="toggleKeyVisibility('googlePlacesApiKey')"><i class="ri-eye-line"></i></button>
                                 </div>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="googleAuthApiKey" class="form-label">Google Auth API Key</label>
                                 <div class="input-group">
                                     <input type="password" class="form-control" id="googleAuthApiKey" placeholder="Enter Google Auth API Key">
-                                    <button class="btn btn-outline-secondary" type="button" onclick="toggleKeyVisibility('googleAuthApiKey')">👁️</button>
+                                    <button class="btn btn-outline-secondary" type="button" onclick="toggleKeyVisibility('googleAuthApiKey')"><i class="ri-eye-line"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -272,9 +239,9 @@
                 </div>
 
                 <!-- Mail Configuration -->
-                <div class="card">
+                <div class="card custom-card">
                     <div class="card-header">
-                        <h5 class="card-title mb-0">Mail Configuration</h5>
+                        <h5 class="card-title mb-0"><i class="ri-mail-line me-2"></i>Mail Configuration</h5>
                     </div>
                     <div class="card-body">
                         <div class="row">
@@ -302,7 +269,7 @@
                                 <label for="mailPassword" class="form-label">Password</label>
                                 <div class="input-group">
                                     <input type="password" class="form-control" id="mailPassword" placeholder="Password">
-                                    <button class="btn btn-outline-secondary" type="button" onclick="toggleKeyVisibility('mailPassword')">👁️</button>
+                                    <button class="btn btn-outline-secondary" type="button" onclick="toggleKeyVisibility('mailPassword')"><i class="ri-eye-line"></i></button>
                                 </div>
                             </div>
                             <div class="col-md-6 mb-3">
@@ -318,24 +285,23 @@
                 </div>
 
                 <!-- Action Buttons -->
-                <div class="card">
+                <div class="card custom-card">
                     <div class="card-body">
-                        <button type="button" class="btn btn-primary" onclick="saveApiKeys()">💾 Save Changes</button>
-                        <button type="button" class="btn btn-secondary ms-2" onclick="resetApiKeys()">🔄 Reset</button>
+                        <button type="button" class="btn btn-primary" onclick="saveApiKeys()"><i class="ri-save-line me-2"></i>Save Changes</button>
+                        <button type="button" class="btn btn-secondary ms-2" onclick="resetApiKeys()"><i class="ri-refresh-line me-2"></i>Reset</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         // Load API keys on page load
         document.addEventListener('DOMContentLoaded', function() {
             loadApiKeys();
         });
 
-        // API Keys object - loads from localStorage or server
+        // API Keys object - loads from localStorage or defaults
         let apiKeys = {
             OPENAI_API_KEY: '',
             OPENAI_MODEL: 'gpt-4',
@@ -423,6 +389,19 @@
             // Save to localStorage for persistence
             localStorage.setItem('apiKeys', JSON.stringify(apiKeys));
 
+            // Backend API integration (example - uncomment when backend is ready)
+            // fetch('/api/settings/keys', {
+            //     method: 'POST',
+            //     headers: {
+            //         'Content-Type': 'application/json',
+            //         'Authorization': `Bearer ${localStorage.getItem('token')}`
+            //     },
+            //     body: JSON.stringify(apiKeys)
+            // })
+            // .then(response => response.json())
+            // .then(data => showAlert('API Keys updated successfully!', 'success'))
+            // .catch(error => showAlert('Error updating API Keys: ' + error.message, 'danger'));
+
             // Show success message
             showAlert('API Keys updated successfully!', 'success');
         }
@@ -445,8 +424,10 @@
             const alertContainer = document.getElementById('alertContainer');
             const alertId = 'alert-' + Date.now();
             
+            const alertClass = type === 'success' ? 'alert-success' : (type === 'danger' ? 'alert-danger' : 'alert-info');
+            
             const alertHtml = `
-                <div id="${alertId}" class="alert alert-${type} alert-dismissible fade show" role="alert">
+                <div id="${alertId}" class="alert ${alertClass} alert-dismissible fade show" role="alert">
                     ${message}
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
@@ -464,4 +445,5 @@
         }
     </script>
 </body>
+
 </html>
