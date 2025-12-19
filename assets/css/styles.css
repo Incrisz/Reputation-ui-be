@@ -12561,6 +12561,7 @@ ul.search-results-list .dropdown li {
 @media (max-width: 992px) {
   .main-content.app-content {
     padding-inline: 1rem !important;
+    padding-block-start: 5rem !important;
   }
 }
 @media (max-width: 576px) {
@@ -19820,6 +19821,29 @@ ul.widgets-transactions-list li:last-child {
   height: 100vh;
   position: relative;
   overflow: auto;
+}
+.main-sidebar.has-footer {
+  display: flex;
+  flex-direction: column;
+  padding-block-end: 1rem;
+}
+@media (min-width: 992px) {
+  .main-sidebar.has-footer {
+    height: calc(100vh - 4.25rem);
+  }
+}
+.main-sidebar.has-footer .main-menu-container {
+  flex: 1 1 auto;
+}
+.sidebar-footer {
+  margin-top: auto;
+  padding: 0.75rem 0 1rem;
+  border-top: 1px solid var(--menu-border-color);
+  background: var(--menu-bg);
+}
+.sidebar-footer .main-menu {
+  margin: 0;
+  padding: 0;
 }
 [data-nav-layout=vertical] .app-sidebar {
   height: 100%;
