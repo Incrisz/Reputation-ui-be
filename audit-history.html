@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-nav-layout="vertical" data-theme-mode="light" data-header-styles="transparent" data-width="fullwidth" data-menu-styles="transparent" data-page-style="flat">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>BizVisibility AI - Audit History</title>
+    <link rel="icon" href="assets/images/brand-logos/favicon.ico" type="image/x-icon">
+    <script src="assets/libs/choices.js/public/assets/scripts/choices.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <link id="style" href="assets/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
+    <link href="assets/css/icons.css" rel="stylesheet">
+    <link href="assets/libs/node-waves/waves.min.css" rel="stylesheet">
+    <link href="assets/libs/simplebar/simplebar.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="page">
+        <!-- Header -->
+        <header class="app-header sticky">
+            <div class="main-header-container container-fluid">
+                <div class="header-content-left">
+                    <a href="dashboard.html" class="header-logo">
+                        <img src="assets/images/brand-logos/desktop-logo.png" alt="logo" class="desktop-logo">
+                    </a>
+                </div>
+                <ul class="header-content-right">
+                    <li class="header-element dropdown">
+                        <a href="javascript:void(0);" class="header-link dropdown-toggle" id="mainHeaderProfile" data-bs-toggle="dropdown">
+                            <img src="assets/images/faces/12.jpg" alt="img" class="header-link-icon">
+                        </a>
+                        <div class="main-header-dropdown dropdown-menu dropdown-menu-end">
+                            <a href="login.html" class="dropdown-item"><i class="ri-logout-box-line me-2"></i>Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        
+        <!-- Sidebar -->
+        <aside class="app-sidebar sticky">
+            <div class="main-sidebar-header">
+                <a href="dashboard.html" class="header-logo">
+                    <img src="assets/images/brand-logos/desktop-logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="main-sidebar">
+                <nav class="main-menu-container">
+                    <ul class="main-menu">
+                        <li class="slide">
+                            <a href="dashboard.html" class="side-menu__item">
+                                <i class="ri-dashboard-line side-menu__icon"></i>
+                                <span class="side-menu__label">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="slide">
+                            <a href="start-audit.html" class="side-menu__item">
+                                <i class="ri-play-circle-line side-menu__icon"></i>
+                                <span class="side-menu__label">Start Audit</span>
+                            </a>
+                        </li>
+                        <li class="slide active">
+                            <a href="audit-history.html" class="side-menu__item">
+                                <i class="ri-history-line side-menu__icon"></i>
+                                <span class="side-menu__label">Audit History</span>
+                            </a>
+                        </li>
+                        <li class="slide">
+                            <a href="pricing-app.html" class="side-menu__item">
+                                <i class="ri-price-tag-line side-menu__icon"></i>
+                                <span class="side-menu__label">Pricing</span>
+                            </a>
+                        </li>
+                        <li class="slide">
+                            <a href="javascript:void(0);" class="side-menu__item">
+                                <i class="ri-customer-service-line side-menu__icon"></i>
+                                <span class="side-menu__label">Support</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <div class="main-content app-content">
+            <div class="container-fluid page-container">
+                <h1 class="page-title fw-bold mb-4">Audit History</h1>
+                
+                <div class="card custom-card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="card-title">Previous Audits</h5>
+                        <button class="btn btn-sm btn-primary" onclick="location.href='start-audit.html'">
+                            <i class="ri-add-line me-1"></i>New Audit
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Business Name</th>
+                                        <th>Overall Score</th>
+                                        <th>SEO Score</th>
+                                        <th>Social Media</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Dec 19, 2025</td>
+                                        <td>Tech Solutions Inc</td>
+                                        <td><strong>87</strong></td>
+                                        <td>92</td>
+                                        <td>78</td>
+                                        <td><span class="badge bg-success">Completed</span></td>
+                                        <td>
+                                            <a href="audit-results.html" class="btn btn-sm btn-primary">View</a>
+                                            <button class="btn btn-sm btn-secondary" onclick="downloadPDF()">
+                                                <i class="ri-download-line"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dec 15, 2025</td>
+                                        <td>Digital Marketing Co</td>
+                                        <td><strong>84</strong></td>
+                                        <td>88</td>
+                                        <td>81</td>
+                                        <td><span class="badge bg-success">Completed</span></td>
+                                        <td>
+                                            <a href="audit-results.html" class="btn btn-sm btn-primary">View</a>
+                                            <button class="btn btn-sm btn-secondary" onclick="downloadPDF()">
+                                                <i class="ri-download-line"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dec 10, 2025</td>
+                                        <td>E-Commerce Store</td>
+                                        <td><strong>79</strong></td>
+                                        <td>82</td>
+                                        <td>76</td>
+                                        <td><span class="badge bg-success">Completed</span></td>
+                                        <td>
+                                            <a href="audit-results.html" class="btn btn-sm btn-primary">View</a>
+                                            <button class="btn btn-sm btn-secondary" onclick="downloadPDF()">
+                                                <i class="ri-download-line"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dec 5, 2025</td>
+                                        <td>Consulting Group</td>
+                                        <td><strong>81</strong></td>
+                                        <td>85</td>
+                                        <td>75</td>
+                                        <td><span class="badge bg-success">Completed</span></td>
+                                        <td>
+                                            <a href="audit-results.html" class="btn btn-sm btn-primary">View</a>
+                                            <button class="btn btn-sm btn-secondary" onclick="downloadPDF()">
+                                                <i class="ri-download-line"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Nov 28, 2025</td>
+                                        <td>Local Business</td>
+                                        <td><strong>75</strong></td>
+                                        <td>78</td>
+                                        <td>72</td>
+                                        <td><span class="badge bg-success">Completed</span></td>
+                                        <td>
+                                            <a href="audit-results.html" class="btn btn-sm btn-primary">View</a>
+                                            <button class="btn btn-sm btn-secondary" onclick="downloadPDF()">
+                                                <i class="ri-download-line"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function downloadPDF() {
+            alert('PDF download would be triggered here');
+        }
+    </script>
+</body>
+
+</html>

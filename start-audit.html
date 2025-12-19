@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-nav-layout="vertical" data-theme-mode="light" data-header-styles="transparent" data-width="fullwidth" data-menu-styles="transparent" data-page-style="flat">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>BizVisibility AI - Start Audit</title>
+    <link rel="icon" href="assets/images/brand-logos/favicon.ico" type="image/x-icon">
+    <script src="assets/libs/choices.js/public/assets/scripts/choices.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <link id="style" href="assets/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
+    <link href="assets/css/icons.css" rel="stylesheet">
+    <link href="assets/libs/node-waves/waves.min.css" rel="stylesheet">
+    <link href="assets/libs/simplebar/simplebar.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="page">
+        <!-- Header -->
+        <header class="app-header sticky">
+            <div class="main-header-container container-fluid">
+                <div class="header-content-left">
+                    <a href="dashboard.html" class="header-logo">
+                        <img src="assets/images/brand-logos/desktop-logo.png" alt="logo" class="desktop-logo">
+                    </a>
+                </div>
+                <ul class="header-content-right">
+                    <li class="header-element dropdown">
+                        <a href="javascript:void(0);" class="header-link dropdown-toggle" id="mainHeaderProfile" data-bs-toggle="dropdown">
+                            <img src="assets/images/faces/12.jpg" alt="img" class="header-link-icon">
+                        </a>
+                        <div class="main-header-dropdown dropdown-menu dropdown-menu-end">
+                            <a href="login.html" class="dropdown-item"><i class="ri-logout-box-line me-2"></i>Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        
+        <!-- Sidebar -->
+        <aside class="app-sidebar sticky">
+            <div class="main-sidebar-header">
+                <a href="dashboard.html" class="header-logo">
+                    <img src="assets/images/brand-logos/desktop-logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="main-sidebar">
+                <nav class="main-menu-container">
+                    <ul class="main-menu">
+                        <li class="slide">
+                            <a href="dashboard.html" class="side-menu__item">
+                                <i class="ri-dashboard-line side-menu__icon"></i>
+                                <span class="side-menu__label">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="slide active">
+                            <a href="start-audit.html" class="side-menu__item">
+                                <i class="ri-play-circle-line side-menu__icon"></i>
+                                <span class="side-menu__label">Start Audit</span>
+                            </a>
+                        </li>
+                        <li class="slide">
+                            <a href="audit-history.html" class="side-menu__item">
+                                <i class="ri-history-line side-menu__icon"></i>
+                                <span class="side-menu__label">Audit History</span>
+                            </a>
+                        </li>
+                        <li class="slide">
+                            <a href="pricing-app.html" class="side-menu__item">
+                                <i class="ri-price-tag-line side-menu__icon"></i>
+                                <span class="side-menu__label">Pricing</span>
+                            </a>
+                        </li>
+                        <li class="slide">
+                            <a href="javascript:void(0);" class="side-menu__item">
+                                <i class="ri-customer-service-line side-menu__icon"></i>
+                                <span class="side-menu__label">Support</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <div class="main-content app-content">
+            <div class="container-fluid page-container">
+                <h1 class="page-title fw-bold mb-4">Start Your Business Audit</h1>
+                
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <!-- Progress Bar -->
+                        <div class="mb-5">
+                            <div class="progress" style="height: 3px;">
+                                <div class="progress-bar" role="progressbar" style="width: 25%;" id="progressBar"></div>
+                            </div>
+                            <div class="row text-center mt-4">
+                                <div class="col-3">
+                                    <small class="fw-semibold step-label" id="step1Label">Business Info</small>
+                                </div>
+                                <div class="col-3">
+                                    <small class="fw-semibold step-label text-muted" id="step2Label">Website</small>
+                                </div>
+                                <div class="col-3">
+                                    <small class="fw-semibold step-label text-muted" id="step3Label">Social Media</small>
+                                </div>
+                                <div class="col-3">
+                                    <small class="fw-semibold step-label text-muted" id="step4Label">Review</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <form id="auditForm">
+                            <!-- Step 1: Business Info -->
+                            <div class="form-step" id="step1">
+                                <div class="card custom-card mb-4">
+                                    <div class="card-body p-5">
+                                        <h4 class="fw-semibold mb-4">Business Information</h4>
+                                        
+                                        <div class="mb-3">
+                                            <label class="form-label fw-medium">Business Name</label>
+                                            <input type="text" class="form-control" name="businessName" required>
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <label class="form-label fw-medium">Industry</label>
+                                            <select class="form-control" name="industry" required>
+                                                <option>Select Industry</option>
+                                                <option>Technology</option>
+                                                <option>Retail</option>
+                                                <option>Healthcare</option>
+                                                <option>Finance</option>
+                                                <option>Other</option>
+                                            </select>
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <label class="form-label fw-medium">Website URL</label>
+                                            <input type="url" class="form-control" name="website" required>
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <label class="form-label fw-medium">Location</label>
+                                            <input type="text" class="form-control" name="location" placeholder="City, Country" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Step 2: Website Analysis -->
+                            <div class="form-step" id="step2" style="display:none;">
+                                <div class="card custom-card mb-4">
+                                    <div class="card-body p-5">
+                                        <h4 class="fw-semibold mb-4">Website Analysis</h4>
+                                        <p class="text-muted mb-4">We'll analyze your website for SEO, performance, and user experience</p>
+                                        
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="checkbox" name="seo" id="seo">
+                                            <label class="form-check-label" for="seo">Analyze SEO Performance</label>
+                                        </div>
+                                        
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="checkbox" name="speed" id="speed">
+                                            <label class="form-check-label" for="speed">Check Page Speed</label>
+                                        </div>
+                                        
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="mobile" id="mobile">
+                                            <label class="form-check-label" for="mobile">Mobile Responsiveness</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Step 3: Social Media -->
+                            <div class="form-step" id="step3" style="display:none;">
+                                <div class="card custom-card mb-4">
+                                    <div class="card-body p-5">
+                                        <h4 class="fw-semibold mb-4">Social Media Presence</h4>
+                                        
+                                        <div class="mb-3">
+                                            <label class="form-label fw-medium">Facebook URL</label>
+                                            <input type="url" class="form-control" name="facebook" placeholder="https://facebook.com/yourpage">
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <label class="form-label fw-medium">Instagram Handle</label>
+                                            <input type="text" class="form-control" name="instagram" placeholder="@yourhandle">
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <label class="form-label fw-medium">LinkedIn URL</label>
+                                            <input type="url" class="form-control" name="linkedin" placeholder="https://linkedin.com/company/yourcompany">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Step 4: Review -->
+                            <div class="form-step" id="step4" style="display:none;">
+                                <div class="card custom-card mb-4">
+                                    <div class="card-body p-5">
+                                        <h4 class="fw-semibold mb-4">Review Your Information</h4>
+                                        <div id="reviewContent" class="text-muted">Loading...</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Navigation Buttons -->
+                            <div class="d-flex gap-2 justify-content-between">
+                                <button type="button" class="btn btn-light" id="prevBtn" onclick="previousStep()" style="display:none;">
+                                    <i class="ri-arrow-left-line me-2"></i>Previous
+                                </button>
+                                <button type="button" class="btn btn-primary" id="nextBtn" onclick="nextStep()">
+                                    Next<i class="ri-arrow-right-line ms-2"></i>
+                                </button>
+                                <button type="submit" class="btn btn-success" id="submitBtn" style="display:none;">
+                                    <i class="ri-check-line me-2"></i>Start Audit
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let currentStep = 1;
+        const totalSteps = 4;
+        
+        function showStep(step) {
+            // Hide all steps
+            for (let i = 1; i <= totalSteps; i++) {
+                document.getElementById('step' + i).style.display = 'none';
+                document.getElementById('step' + i + 'Label').classList.add('text-muted');
+                document.getElementById('step' + i + 'Label').classList.remove('text-primary');
+            }
+            
+            // Show current step
+            document.getElementById('step' + step).style.display = 'block';
+            document.getElementById('step' + step + 'Label').classList.remove('text-muted');
+            document.getElementById('step' + step + 'Label').classList.add('text-primary');
+            
+            // Update progress bar
+            document.getElementById('progressBar').style.width = (step * 25) + '%';
+            
+            // Show/hide buttons
+            document.getElementById('prevBtn').style.display = step > 1 ? 'block' : 'none';
+            document.getElementById('nextBtn').style.display = step < totalSteps ? 'block' : 'none';
+            document.getElementById('submitBtn').style.display = step === totalSteps ? 'block' : 'none';
+            
+            currentStep = step;
+        }
+        
+        function nextStep() {
+            if (currentStep < totalSteps) {
+                if (currentStep === totalSteps - 1) {
+                    generateReview();
+                }
+                showStep(currentStep + 1);
+            }
+        }
+        
+        function previousStep() {
+            if (currentStep > 1) {
+                showStep(currentStep - 1);
+            }
+        }
+        
+        function generateReview() {
+            const form = document.getElementById('auditForm');
+            const formData = new FormData(form);
+            const review = `
+                <div class="row">
+                    <div class="col-md-6">
+                        <p><strong>Business Name:</strong> ${formData.get('businessName')}</p>
+                        <p><strong>Industry:</strong> ${formData.get('industry')}</p>
+                        <p><strong>Website:</strong> ${formData.get('website')}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><strong>Location:</strong> ${formData.get('location')}</p>
+                    </div>
+                </div>
+            `;
+            document.getElementById('reviewContent').innerHTML = review;
+        }
+        
+        document.getElementById('auditForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            window.location.href = 'audit-results.html';
+        });
+        
+        showStep(1);
+    </script>
+</body>
+
+</html>

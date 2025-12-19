@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-nav-layout="vertical" data-theme-mode="light" data-header-styles="transparent" data-width="fullwidth" data-menu-styles="transparent" data-page-style="flat">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>BizVisibility AI - Audit Results</title>
+    <link rel="icon" href="assets/images/brand-logos/favicon.ico" type="image/x-icon">
+    <script src="assets/libs/choices.js/public/assets/scripts/choices.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <link id="style" href="assets/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
+    <link href="assets/css/icons.css" rel="stylesheet">
+    <link href="assets/libs/node-waves/waves.min.css" rel="stylesheet">
+    <link href="assets/libs/simplebar/simplebar.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/libs/apexcharts/apexcharts.css">
+    <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
+    <script src="assets/libs/echarts/echarts.min.js"></script>
+</head>
+
+<body>
+    <div class="page">
+        <!-- Header -->
+        <header class="app-header sticky">
+            <div class="main-header-container container-fluid">
+                <div class="header-content-left">
+                    <a href="dashboard.html" class="header-logo">
+                        <img src="assets/images/brand-logos/desktop-logo.png" alt="logo" class="desktop-logo">
+                    </a>
+                </div>
+                <ul class="header-content-right">
+                    <li class="header-element dropdown">
+                        <a href="javascript:void(0);" class="header-link dropdown-toggle" id="mainHeaderProfile" data-bs-toggle="dropdown">
+                            <img src="assets/images/faces/12.jpg" alt="img" class="header-link-icon">
+                        </a>
+                        <div class="main-header-dropdown dropdown-menu dropdown-menu-end">
+                            <a href="login.html" class="dropdown-item"><i class="ri-logout-box-line me-2"></i>Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        
+        <!-- Sidebar -->
+        <aside class="app-sidebar sticky">
+            <div class="main-sidebar-header">
+                <a href="dashboard.html" class="header-logo">
+                    <img src="assets/images/brand-logos/desktop-logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="main-sidebar">
+                <nav class="main-menu-container">
+                    <ul class="main-menu">
+                        <li class="slide">
+                            <a href="dashboard.html" class="side-menu__item">
+                                <i class="ri-dashboard-line side-menu__icon"></i>
+                                <span class="side-menu__label">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="slide">
+                            <a href="start-audit.html" class="side-menu__item">
+                                <i class="ri-play-circle-line side-menu__icon"></i>
+                                <span class="side-menu__label">Start Audit</span>
+                            </a>
+                        </li>
+                        <li class="slide active">
+                            <a href="audit-history.html" class="side-menu__item">
+                                <i class="ri-history-line side-menu__icon"></i>
+                                <span class="side-menu__label">Audit History</span>
+                            </a>
+                        </li>
+                        <li class="slide">
+                            <a href="pricing-app.html" class="side-menu__item">
+                                <i class="ri-price-tag-line side-menu__icon"></i>
+                                <span class="side-menu__label">Pricing</span>
+                            </a>
+                        </li>
+                        <li class="slide">
+                            <a href="javascript:void(0);" class="side-menu__item">
+                                <i class="ri-customer-service-line side-menu__icon"></i>
+                                <span class="side-menu__label">Support</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <div class="main-content app-content">
+            <div class="container-fluid page-container">
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                    <div>
+                        <h1 class="page-title fw-bold">Audit Results</h1>
+                        <p class="text-muted">Completed: Dec 19, 2025</p>
+                    </div>
+                    <button class="btn btn-primary" onclick="location.href='start-audit.html'">
+                        <i class="ri-refresh-line me-2"></i>New Audit
+                    </button>
+                </div>
+                
+                <!-- Overall Score -->
+                <div class="row mb-4">
+                    <div class="col-lg-3">
+                        <div class="card custom-card text-center">
+                            <div class="card-body p-5">
+                                <h5 class="fw-semibold text-muted mb-3">Overall Score</h5>
+                                <div class="position-relative mx-auto" style="width:150px; height:150px;">
+                                    <div id="overallGaugeChart"></div>
+                                </div>
+                                <h3 class="fw-bold text-primary mt-3">87/100</h3>
+                                <span class="badge bg-success mt-2">Excellent</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pie Chart -->
+                    <div class="col-lg-3">
+                        <div class="card custom-card">
+                            <div class="card-header">
+                                <h5 class="card-title">Visibility Breakdown</h5>
+                            </div>
+                            <div class="card-body">
+                                <div id="pieChart" style="height: 300px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Radial Bar Chart -->
+                    <div class="col-lg-3">
+                        <div class="card custom-card">
+                            <div class="card-header">
+                                <h5 class="card-title">Category Scores</h5>
+                            </div>
+                            <div class="card-body">
+                                <div id="radialChart" style="height: 300px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Donut Chart -->
+                    <div class="col-lg-3">
+                        <div class="card custom-card">
+                            <div class="card-header">
+                                <h5 class="card-title">Platform Distribution</h5>
+                            </div>
+                            <div class="card-body">
+                                <div id="donutChart" style="height: 300px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Detailed Metrics -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card custom-card">
+                            <div class="card-header">
+                                <h5 class="card-title">Detailed Metrics</h5>
+                            </div>
+                            <div class="card-body">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Category</th>
+                                            <th>Score</th>
+                                            <th>Status</th>
+                                            <th>Recommendation</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Website SEO</td>
+                                            <td>92</td>
+                                            <td><span class="badge bg-success">Excellent</span></td>
+                                            <td>Maintain current optimization strategies</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Social Media Presence</td>
+                                            <td>78</td>
+                                            <td><span class="badge bg-warning">Good</span></td>
+                                            <td>Increase posting frequency and engagement</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Online Reviews</td>
+                                            <td>85</td>
+                                            <td><span class="badge bg-success">Excellent</span></td>
+                                            <td>Continue encouraging customer reviews</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Local Listings</td>
+                                            <td>88</td>
+                                            <td><span class="badge bg-success">Excellent</span></td>
+                                            <td>Ensure all information is up-to-date</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Mobile Optimization</td>
+                                            <td>91</td>
+                                            <td><span class="badge bg-success">Excellent</span></td>
+                                            <td>Mobile experience is optimal</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Gauge Chart
+        var gaugeOptions = {
+            chart: {
+                type: 'radialBar',
+                height: 150
+            },
+            series: [87],
+            colors: ['#05a34a'],
+            plotOptions: {
+                radialBar: {
+                    startAngle: -90,
+                    endAngle: 90,
+                    hollow: {
+                        size: '70%',
+                    },
+                    dataLabels: {
+                        name: {
+                            show: false
+                        },
+                        value: {
+                            offsetY: 0,
+                            fontSize: '18px',
+                            fontWeight: '600'
+                        }
+                    }
+                }
+            }
+        };
+        var gaugeChart = new ApexCharts(document.querySelector("#overallGaugeChart"), gaugeOptions);
+        gaugeChart.render();
+        
+        // Pie Chart
+        var pieOptions = {
+            chart: {
+                type: 'pie',
+                height: 300
+            },
+            labels: ['Website', 'Social Media', 'Reviews', 'Local Listings'],
+            series: [30, 25, 25, 20],
+            colors: ['#5f6ee9', '#ff9b44', '#09c97a', '#ff5370']
+        };
+        var pieChart = new ApexCharts(document.querySelector("#pieChart"), pieOptions);
+        pieChart.render();
+        
+        // Radial Bar Chart
+        var radialOptions = {
+            chart: {
+                type: 'radialBar',
+                height: 300
+            },
+            plotOptions: {
+                radialBar: {
+                    horizontal: true,
+                    dataLabels: {
+                        name: {
+                            fontSize: '12px'
+                        },
+                        value: {
+                            fontSize: '14px'
+                        }
+                    }
+                }
+            },
+            series: [92, 78, 85, 88, 91],
+            labels: ['SEO', 'Social', 'Reviews', 'Local', 'Mobile']
+        };
+        var radialChart = new ApexCharts(document.querySelector("#radialChart"), radialOptions);
+        radialChart.render();
+        
+        // Donut Chart
+        var donutOptions = {
+            chart: {
+                type: 'donut',
+                height: 300
+            },
+            labels: ['Google', 'Facebook', 'LinkedIn', 'Others'],
+            series: [35, 25, 20, 20],
+            colors: ['#4285F4', '#1877F2', '#0A66C2', '#9CA3AF']
+        };
+        var donutChart = new ApexCharts(document.querySelector("#donutChart"), donutOptions);
+        donutChart.render();
+    </script>
+</body>
+
+</html>

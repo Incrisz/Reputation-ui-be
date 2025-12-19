@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-nav-layout="vertical" data-theme-mode="light" data-header-styles="transparent" data-width="fullwidth" data-menu-styles="transparent" data-page-style="flat">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>BizVisibility AI - Dashboard</title>
+    <meta name="Description" content="Business Reputation Dashboard">
+    <meta name="Author" content="BizVisibility AI">
+    
+    <link rel="icon" href="assets/images/brand-logos/favicon.ico" type="image/x-icon">
+    <script src="assets/libs/choices.js/public/assets/scripts/choices.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <link id="style" href="assets/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
+    <link href="assets/css/icons.css" rel="stylesheet">
+    <link href="assets/libs/node-waves/waves.min.css" rel="stylesheet">
+    <link href="assets/libs/simplebar/simplebar.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="page">
+        <!-- Header -->
+        <header class="app-header sticky">
+            <div class="main-header-container container-fluid">
+                <div class="header-content-left">
+                    <div class="header-element">
+                        <div class="horizontal-logo">
+                            <a href="dashboard.html" class="header-logo">
+                                <img src="assets/images/brand-logos/desktop-logo.png" alt="logo" class="desktop-logo">
+                                <img src="assets/images/brand-logos/desktop-dark.png" alt="logo" class="desktop-dark">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <ul class="header-content-right">
+                    <li class="header-element dropdown">
+                        <a href="javascript:void(0);" class="header-link dropdown-toggle" id="mainHeaderProfile" data-bs-toggle="dropdown" data-bs-auto-close="outside">
+                            <div>
+                                <img src="assets/images/faces/12.jpg" alt="img" class="header-link-icon">
+                            </div>
+                        </a>
+                        <div class="main-header-dropdown dropdown-menu dropdown-menu-end">
+                            <a href="profile.html" class="dropdown-item"><i class="ri-user-circle-line me-2"></i>Profile</a>
+                            <a href="profile-settings.html" class="dropdown-item"><i class="ri-settings-line me-2"></i>Settings</a>
+                            <a href="login.html" class="dropdown-item"><i class="ri-logout-box-line me-2"></i>Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        
+        <!-- Sidebar -->
+        <aside class="app-sidebar sticky">
+            <div class="main-sidebar-header">
+                <a href="dashboard.html" class="header-logo">
+                    <img src="assets/images/brand-logos/desktop-logo.png" alt="logo" class="desktop-logo">
+                </a>
+            </div>
+            
+            <div class="main-sidebar">
+                <nav class="main-menu-container">
+                    <ul class="main-menu">
+                        <li class="slide">
+                            <a href="dashboard.html" class="side-menu__item">
+                                <i class="ri-dashboard-line side-menu__icon"></i>
+                                <span class="side-menu__label">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="slide">
+                            <a href="start-audit.html" class="side-menu__item">
+                                <i class="ri-play-circle-line side-menu__icon"></i>
+                                <span class="side-menu__label">Start Audit</span>
+                            </a>
+                        </li>
+                        <li class="slide">
+                            <a href="audit-history.html" class="side-menu__item">
+                                <i class="ri-history-line side-menu__icon"></i>
+                                <span class="side-menu__label">Audit History</span>
+                            </a>
+                        </li>
+                        <li class="slide">
+                            <a href="pricing-app.html" class="side-menu__item">
+                                <i class="ri-price-tag-line side-menu__icon"></i>
+                                <span class="side-menu__label">Pricing</span>
+                            </a>
+                        </li>
+                        <li class="slide">
+                            <a href="javascript:void(0);" class="side-menu__item">
+                                <i class="ri-customer-service-line side-menu__icon"></i>
+                                <span class="side-menu__label">Support</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <div class="main-content app-content">
+            <div class="container-fluid page-container">
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                    <div>
+                        <h1 class="page-title fw-bold mb-0">Welcome Back!</h1>
+                        <p class="text-muted">Here's your business reputation overview</p>
+                    </div>
+                    <button class="btn btn-primary" onclick="location.href='start-audit.html'">
+                        <i class="ri-play-circle-line me-2"></i>Start New Audit
+                    </button>
+                </div>
+                
+                <!-- Stats Row -->
+                <div class="row mb-4">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card custom-card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-start gap-3">
+                                    <div class="flex-fill">
+                                        <span class="fs-13 fw-medium">Visibility Score</span>
+                                        <h4 class="fw-bold my-2 text-primary">87</h4>
+                                        <span class="fs-12 text-success"><i class="ri-trending-up-line me-1"></i>+5 this month</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card custom-card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-start gap-3">
+                                    <div class="flex-fill">
+                                        <span class="fs-13 fw-medium">Online Mentions</span>
+                                        <h4 class="fw-bold my-2 text-success">342</h4>
+                                        <span class="fs-12 text-success"><i class="ri-trending-up-line me-1"></i>+12 this month</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card custom-card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-start gap-3">
+                                    <div class="flex-fill">
+                                        <span class="fs-13 fw-medium">Reviews</span>
+                                        <h4 class="fw-bold my-2 text-warning">4.8</h4>
+                                        <span class="fs-12 text-muted">Avg. Rating</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card custom-card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-start gap-3">
+                                    <div class="flex-fill">
+                                        <span class="fs-13 fw-medium">Last Audit</span>
+                                        <h4 class="fw-bold my-2">2 days</h4>
+                                        <span class="fs-12 text-muted">ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Recent Audits -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card custom-card">
+                            <div class="card-header">
+                                <h5 class="card-title">Recent Audits</h5>
+                            </div>
+                            <div class="card-body">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Status</th>
+                                            <th>Score</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Dec 17, 2025</td>
+                                            <td><span class="badge bg-success">Completed</span></td>
+                                            <td>87</td>
+                                            <td><a href="audit-results.html" class="btn btn-sm btn-primary">View</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Dec 15, 2025</td>
+                                            <td><span class="badge bg-success">Completed</span></td>
+                                            <td>84</td>
+                                            <td><a href="audit-results.html" class="btn btn-sm btn-primary">View</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
