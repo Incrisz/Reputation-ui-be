@@ -290,7 +290,7 @@
                                 <button type="button" class="btn btn-primary" id="nextBtn" onclick="nextStep()">
                                     Next<i class="ri-arrow-right-line ms-2"></i>
                                 </button>
-                                <button type="submit" class="btn btn-success" id="submitBtn" style="display:none;">
+                                <button type="submit" class="btn btn-success" id="submitBtn" data-next="audit-progress.html" style="display:none;">
                                     <i class="ri-check-line me-2"></i>Start Audit Now
                                 </button>
                             </div>
@@ -331,9 +331,29 @@
             
             currentStep = step;
         }
+
+        function validateCurrentStep() {
+            const stepEl = document.getElementById('step' + currentStep);
+            if (!stepEl) {
+                return true;
+            }
+
+            const fields = stepEl.querySelectorAll('input, select, textarea');
+            for (const field of fields) {
+                if (!field.checkValidity()) {
+                    field.reportValidity();
+                    return false;
+                }
+            }
+
+            return true;
+        }
         
         function nextStep() {
             if (currentStep < totalSteps) {
+                if (!validateCurrentStep()) {
+                    return;
+                }
                 if (currentStep === totalSteps - 1) {
                     generateReview();
                 }
@@ -367,7 +387,20 @@
         
         document.getElementById('auditForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            window.location.href = 'audit-progress.html';
+            const invalidField = this.querySelector(':invalid');
+            if (invalidField) {
+                const stepEl = invalidField.closest('.form-step');
+                if (stepEl?.id?.startsWith('step')) {
+                    const stepNumber = parseInt(stepEl.id.replace('step', ''), 10);
+                    if (!Number.isNaN(stepNumber)) {
+                        showStep(stepNumber);
+                    }
+                }
+                invalidField.reportValidity();
+                return;
+            }
+            const nextUrl = document.getElementById('submitBtn')?.getAttribute('data-next') || 'audit-progress.html';
+            window.location.href = nextUrl;
         });
         
         // Close sidebar on mobile when a link is clicked
