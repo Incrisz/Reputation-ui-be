@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-nav-layout="vertical" data-theme-mode="light" data-header-styles="transparent" data-width="fullwidth" data-menu-styles="transparent" data-page-style="flat" data-toggled="close">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>BizVisibility AI - User Details</title>
+    <link rel="icon" href="../assets/images/brand-logos/favicon.ico" type="image/x-icon">
+    <script src="../assets/libs/choices.js/public/assets/scripts/choices.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <link id="style" href="../assets/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/styles.css" rel="stylesheet">
+    <link href="../assets/css/icons.css" rel="stylesheet">
+    <link href="../assets/libs/node-waves/waves.min.css" rel="stylesheet">
+    <link href="../assets/libs/simplebar/simplebar.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="page">
+        <!-- Header -->
+        <header class="app-header sticky">
+            <div class="main-header-container container-fluid">
+                <div class="header-content-left">
+                    <div class="header-element">
+                        <div class="horizontal-logo">
+                            <a href="dashboard.html" class="header-logo">
+                                <img src="../assets/images/brand-logos/desktop-logo.png" alt="logo" class="desktop-logo">
+                                <img src="../assets/images/brand-logos/desktop-dark.png" alt="logo" class="desktop-dark">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="header-element">
+                        <a aria-label="Hide Sidebar" class="sidemenu-toggle header-link animated-arrow hor-toggle horizontal-navtoggle" data-bs-toggle="sidebar" href="javascript:void(0);"><span></span></a>
+                    </div>
+                </div>
+                
+                <ul class="header-content-right">
+                    <li class="header-element header-theme-mode">
+                        <a href="javascript:void(0);" class="header-link layout-setting">
+                            <span class="light-layout">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="header-link-icon" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><path d="M108.11,28.11A96.09,96.09,0,0,0,227.89,147.89,96,96,0,1,1,108.11,28.11Z" opacity="0.2"/><path d="M108.11,28.11A96.09,96.09,0,0,0,227.89,147.89,96,96,0,1,1,108.11,28.11Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                            </span>
+                            <span class="dark-layout">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="header-link-icon" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><circle cx="128" cy="128" r="56" opacity="0.2"/><line x1="128" y1="40" x2="128" y2="32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><circle cx="128" cy="128" r="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="64" y1="64" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="64" y1="192" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="192" y1="64" x2="200" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="192" y1="192" x2="200" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="40" y1="128" x2="32" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="128" y1="216" x2="128" y2="224" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="216" y1="128" x2="224" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="header-element dropdown">
+                        <a href="javascript:void(0);" class="header-link dropdown-toggle" id="mainHeaderProfile" data-bs-toggle="dropdown" data-bs-auto-close="outside">
+                            <div>
+                                <img src="../assets/images/faces/12.jpg" alt="img" class="header-link-icon">
+                            </div>
+                        </a>
+                        <div class="main-header-dropdown dropdown-menu pt-0 overflow-hidden header-profile-dropdown dropdown-menu-end" aria-labelledby="mainHeaderProfile">
+                            <div class="p-3 bg-primary text-fixed-white">
+                                <p class="mb-0 fs-16">Admin Profile</p>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <ul class="list-unstyled mb-0">
+                                <li>
+                                    <a class="dropdown-item d-flex align-items-center" href="profile-settings.html"><i class="ri-settings-gear-line me-2"></i>Admin Settings</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item d-flex align-items-center" href="../login.html"><i class="ri-logout-box-line me-2"></i>Log Out</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        
+        <!-- Sidebar -->
+        <aside class="app-sidebar sticky" id="sidebar">
+            <div class="main-sidebar-header">
+                <a href="dashboard.html" class="header-logo">
+                    <img src="../assets/images/brand-logos/desktop-logo.png" alt="logo" class="desktop-logo">
+                    <img src="../assets/images/brand-logos/desktop-dark.png" alt="logo" class="desktop-dark">
+                </a>
+            </div>
+            
+            <div class="main-sidebar has-footer" id="sidebar-scroll">
+                <nav class="main-menu-container nav nav-pills flex-column sub-open">
+                    <ul class="main-menu">
+                        <li class="slide">
+                            <a href="dashboard.html" class="side-menu__item">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><path d="M133.66,34.34a8,8,0,0,0-11.32,0L40,116.69V216h64V152h48v64h64V116.69Z" opacity="0.2"/><line x1="16" y1="216" x2="240" y2="216" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><polyline points="152 216 152 152 104 152 104 216" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="40" y1="116.69" x2="40" y2="216" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="216" y1="216" x2="216" y2="116.69" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M24,132.69l98.34-98.35a8,8,0,0,1,11.32,0L232,132.69" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                                <span class="side-menu__label">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="slide">
+                            <a href="users.html" class="side-menu__item">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><circle cx="88" cy="104" r="40" opacity="0.2"/><circle cx="88" cy="104" r="40" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M16,216a64,64,0,0,1,144,0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><circle cx="168" cy="120" r="32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M131.37,203a56,56,0,0,1,89.26,0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                                <span class="side-menu__label">Users & Businesses</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <div class="main-content app-content">
+            <div class="container-fluid page-container">
+                <a href="users.html" class="btn btn-outline-secondary mb-3"><i class="ri-arrow-left-line"></i> Back to Users</a>
+                
+                <div class="row">
+                    <!-- User Info Card -->
+                    <div class="col-lg-4">
+                        <div class="card custom-card mb-3">
+                            <div class="card-body text-center">
+                                <img src="../assets/images/faces/1.jpg" alt="user" class="rounded-circle mb-3" style="width: 100px; height: 100px; object-fit: cover;">
+                                <h5 class="fw-bold mb-2" id="userFullName">John Doe</h5>
+                                <p class="text-muted mb-3" id="userBusinessName">Tech Startup Inc</p>
+                                
+                                <div class="mb-3">
+                                    <span class="badge bg-primary mb-2" id="userPlan">Premium</span>
+                                    <span class="badge bg-success" id="userStatus">Active</span>
+                                </div>
+                            </div>
+                            <div class="card-footer border-top">
+                                <button class="btn btn-sm btn-primary w-100" onclick="editUser()"><i class="ri-edit-line"></i> Edit Info</button>
+                            </div>
+                        </div>
+
+                        <div class="card custom-card">
+                            <div class="card-header">
+                                <h6 class="card-title">Quick Info</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <small class="text-muted d-block">Email</small>
+                                    <p class="mb-0" id="userEmail">john@example.com</p>
+                                </div>
+                                <div class="mb-3">
+                                    <small class="text-muted d-block">Phone</small>
+                                    <p class="mb-0" id="userPhone">+1 (555) 123-4567</p>
+                                </div>
+                                <div>
+                                    <small class="text-muted d-block">Joined</small>
+                                    <p class="mb-0" id="userJoined">Dec 15, 2025</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Audit History for User -->
+                    <div class="col-lg-8">
+                        <div class="card custom-card">
+                            <div class="card-header">
+                                <h5 class="card-title">Business Audits</h5>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table table-hover mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th>Business Name</th>
+                                                <th>Score</th>
+                                                <th>Status</th>
+                                                <th>Created Date</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="userAuditsTable">
+                                            <tr>
+                                                <td><strong>Tech Startup Inc</strong></td>
+                                                <td>
+                                                    <div class="progress" style="height: 20px;">
+                                                        <div class="progress-bar bg-primary" role="progressbar" style="width: 87%;" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100">87</div>
+                                                    </div>
+                                                </td>
+                                                <td><span class="badge bg-success">Completed</span></td>
+                                                <td>Dec 18, 2025</td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-outline-primary" onclick="viewAuditDetails(1)"><i class="ri-eye-line"></i> View</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit User Modal -->
+    <div class="modal fade" id="editUserModal" tabindex="-1" aria-labelledby="editUserModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-bottom">
+                    <h5 class="modal-title" id="editUserModalLabel">Edit User Information</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editUserForm">
+                        <div class="mb-3">
+                            <label for="editName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="editName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="editEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editBusiness" class="form-label">Business Name</label>
+                            <input type="text" class="form-control" id="editBusiness" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editPhone" class="form-label">Phone</label>
+                            <input type="tel" class="form-control" id="editPhone">
+                        </div>
+                        <div class="mb-3">
+                            <label for="editPlan" class="form-label">Plan Type</label>
+                            <select class="form-control" id="editPlan" required>
+                                <option value="Free">Free</option>
+                                <option value="Standard">Standard</option>
+                                <option value="Premium">Premium</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editStatus" class="form-label">Status</label>
+                            <select class="form-control" id="editStatus" required>
+                                <option value="Active">Active</option>
+                                <option value="Inactive">Inactive</option>
+                                <option value="Trial">Trial</option>
+                                <option value="Suspended">Suspended</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="saveUserChanges()">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="../assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Sample user data
+        const users = {
+            1: {
+                name: "John Doe",
+                email: "john@example.com",
+                business: "Tech Startup Inc",
+                plan: "Premium",
+                status: "Active",
+                phone: "+1 (555) 123-4567",
+                joined: "Dec 15, 2025",
+                audits: [
+                    { id: 1, name: "Tech Startup Inc", score: 87, status: "Completed", date: "Dec 18, 2025" },
+                    { id: 2, name: "Tech Startup Inc", score: 72, status: "Completed", date: "Nov 20, 2025" },
+                    { id: 3, name: "Tech Startup Inc", score: 65, status: "Completed", date: "Oct 10, 2025" }
+                ]
+            },
+            2: {
+                name: "Jane Smith",
+                email: "jane@example.com",
+                business: "Digital Agency Pro",
+                plan: "Standard",
+                status: "Active",
+                phone: "+1 (555) 234-5678",
+                joined: "Dec 12, 2025",
+                audits: [
+                    { id: 4, name: "Digital Agency Pro", score: 75, status: "Completed", date: "Dec 17, 2025" },
+                    { id: 5, name: "Digital Agency Pro", score: 68, status: "Completed", date: "Nov 15, 2025" }
+                ]
+            },
+            3: {
+                name: "Mike Johnson",
+                email: "mike@example.com",
+                business: "E-Commerce Store",
+                plan: "Free",
+                status: "Trial",
+                phone: "+1 (555) 345-6789",
+                joined: "Dec 10, 2025",
+                audits: [
+                    { id: 6, name: "E-Commerce Store", score: 45, status: "In Progress", date: "Dec 19, 2025" }
+                ]
+            }
+        };
+
+        function loadUserDetails() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const userId = urlParams.get('id') || 1;
+            const user = users[userId];
+
+            if (user) {
+                document.getElementById('userFullName').textContent = user.name;
+                document.getElementById('userEmail').textContent = user.email;
+                document.getElementById('userBusinessName').textContent = user.business;
+                document.getElementById('userPhone').textContent = user.phone;
+                document.getElementById('userJoined').textContent = user.joined;
+                document.getElementById('userPlan').textContent = user.plan;
+                document.getElementById('userStatus').textContent = user.status;
+
+                // Update audit history
+                const auditTableBody = document.getElementById('userAuditsTable');
+                auditTableBody.innerHTML = '';
+                user.audits.forEach(audit => {
+                    const scoreColor = audit.score >= 80 ? 'bg-primary' : audit.score >= 60 ? 'bg-warning' : 'bg-danger';
+                    auditTableBody.innerHTML += `
+                        <tr>
+                            <td><strong>${audit.name}</strong></td>
+                            <td>
+                                <div class="progress" style="height: 20px;">
+                                    <div class="progress-bar ${scoreColor}" role="progressbar" style="width: ${audit.score}%;" aria-valuenow="${audit.score}" aria-valuemin="0" aria-valuemax="100">${audit.score}</div>
+                                </div>
+                            </td>
+                            <td><span class="badge ${audit.status === 'Completed' ? 'bg-success' : 'bg-info'}">${audit.status}</span></td>
+                            <td>${audit.date}</td>
+                            <td>
+                                <button class="btn btn-sm btn-outline-primary" onclick="viewAuditDetails(${audit.id})"><i class="ri-eye-line"></i> View</button>
+                            </td>
+                        </tr>
+                    `;
+                });
+            }
+        }
+
+        function editUser() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const userId = urlParams.get('id') || 1;
+            const user = users[userId];
+
+            if (user) {
+                // Populate form with current user data
+                document.getElementById('editName').value = user.name;
+                document.getElementById('editEmail').value = user.email;
+                document.getElementById('editBusiness').value = user.business;
+                document.getElementById('editPhone').value = user.phone;
+                document.getElementById('editPlan').value = user.plan;
+                document.getElementById('editStatus').value = user.status;
+                
+                // Store userId for save function
+                document.getElementById('editUserForm').dataset.userId = userId;
+                
+                // Show modal
+                new bootstrap.Modal(document.getElementById('editUserModal')).show();
+            }
+        }
+
+        function saveUserChanges() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const userId = parseInt(document.getElementById('editUserForm').dataset.userId) || 1;
+            
+            // Update user data
+            users[userId].name = document.getElementById('editName').value;
+            users[userId].email = document.getElementById('editEmail').value;
+            users[userId].business = document.getElementById('editBusiness').value;
+            users[userId].phone = document.getElementById('editPhone').value;
+            users[userId].plan = document.getElementById('editPlan').value;
+            users[userId].status = document.getElementById('editStatus').value;
+            
+            // Reload the page to display updated data
+            loadUserDetails();
+            
+            // Close modal
+            bootstrap.Modal.getInstance(document.getElementById('editUserModal')).hide();
+            
+            // Show success message
+            alert('User information updated successfully!');
+        }
+
+        function viewAuditDetails(auditId) {
+            alert('Viewing audit details for audit #' + auditId);
+        }
+
+        function startNewAudit() {
+            alert('Starting new audit...');
+        }
+
+        // Theme mode toggle
+        document.querySelector('.layout-setting').addEventListener('click', function(e) {
+            e.preventDefault();
+            const html = document.documentElement;
+            const currentMode = html.getAttribute('data-theme-mode');
+            const newMode = currentMode === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme-mode', newMode);
+            localStorage.setItem('themeMode', newMode);
+        });
+
+        // Initialize theme from localStorage
+        const savedTheme = localStorage.getItem('themeMode') || 'light';
+        document.documentElement.setAttribute('data-theme-mode', savedTheme);
+
+        // Load user details on page load
+        loadUserDetails();
+    </script>
+</body>
+
+</html>

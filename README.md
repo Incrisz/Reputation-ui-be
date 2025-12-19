@@ -12,6 +12,4 @@ Our AI-powered app checks how easy it is to find a business online and how well 
 
 
 
-we're changing the #985ffd color to #dd9933 and also making it gradient 
-
-create an admin folder and create files for the admin dashboard , admin should be able to view  users , view/edit their plans, view edit users audit and audit history 
+on the sidebar let us add Plans...admin should be able to view plans and edit name amount and details/info  of the plans

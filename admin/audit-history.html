@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-nav-layout="vertical" data-theme-mode="light" data-header-styles="transparent" data-width="fullwidth" data-menu-styles="transparent" data-page-style="flat" data-toggled="close">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>BizVisibility AI - Audit History</title>
+    <link rel="icon" href="../assets/images/brand-logos/favicon.ico" type="image/x-icon">
+    <script src="../assets/libs/choices.js/public/assets/scripts/choices.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <link id="style" href="../assets/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/styles.css" rel="stylesheet">
+    <link href="../assets/css/icons.css" rel="stylesheet">
+    <link href="../assets/libs/node-waves/waves.min.css" rel="stylesheet">
+    <link href="../assets/libs/simplebar/simplebar.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="page">
+        <!-- Header -->
+        <header class="app-header sticky">
+            <div class="main-header-container container-fluid">
+                <div class="header-content-left">
+                    <div class="header-element">
+                        <div class="horizontal-logo">
+                            <a href="dashboard.html" class="header-logo">
+                                <img src="../assets/images/brand-logos/desktop-logo.png" alt="logo" class="desktop-logo">
+                                <img src="../assets/images/brand-logos/desktop-dark.png" alt="logo" class="desktop-dark">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="header-element">
+                        <a aria-label="Hide Sidebar" class="sidemenu-toggle header-link animated-arrow hor-toggle horizontal-navtoggle" data-bs-toggle="sidebar" href="javascript:void(0);"><span></span></a>
+                    </div>
+                </div>
+                
+                <ul class="header-content-right">
+                    <li class="header-element header-theme-mode">
+                        <a href="javascript:void(0);" class="header-link layout-setting">
+                            <span class="light-layout">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="header-link-icon" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><path d="M108.11,28.11A96.09,96.09,0,0,0,227.89,147.89,96,96,0,1,1,108.11,28.11Z" opacity="0.2"/><path d="M108.11,28.11A96.09,96.09,0,0,0,227.89,147.89,96,96,0,1,1,108.11,28.11Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                            </span>
+                            <span class="dark-layout">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="header-link-icon" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><circle cx="128" cy="128" r="56" opacity="0.2"/><line x1="128" y1="40" x2="128" y2="32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><circle cx="128" cy="128" r="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="64" y1="64" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="64" y1="192" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="192" y1="64" x2="200" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="192" y1="192" x2="200" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="40" y1="128" x2="32" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="128" y1="216" x2="128" y2="224" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="216" y1="128" x2="224" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="header-element dropdown">
+                        <a href="javascript:void(0);" class="header-link dropdown-toggle" id="mainHeaderProfile" data-bs-toggle="dropdown" data-bs-auto-close="outside">
+                            <div>
+                                <img src="../assets/images/faces/12.jpg" alt="img" class="header-link-icon">
+                            </div>
+                        </a>
+                        <div class="main-header-dropdown dropdown-menu pt-0 overflow-hidden header-profile-dropdown dropdown-menu-end" aria-labelledby="mainHeaderProfile">
+                            <div class="p-3 bg-primary text-fixed-white">
+                                <p class="mb-0 fs-16">Admin Profile</p>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <ul class="list-unstyled mb-0">
+                                <li>
+                                    <a class="dropdown-item d-flex align-items-center" href="profile-settings.html"><i class="ri-settings-gear-line me-2"></i>Admin Settings</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item d-flex align-items-center" href="../login.html"><i class="ri-logout-box-line me-2"></i>Log Out</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        
+        <!-- Sidebar -->
+        <aside class="app-sidebar sticky" id="sidebar">
+            <div class="main-sidebar-header">
+                <a href="dashboard.html" class="header-logo">
+                    <img src="../assets/images/brand-logos/desktop-logo.png" alt="logo" class="desktop-logo">
+                    <img src="../assets/images/brand-logos/desktop-dark.png" alt="logo" class="desktop-dark">
+                </a>
+            </div>
+            
+            <div class="main-sidebar has-footer" id="sidebar-scroll">
+                <nav class="main-menu-container nav nav-pills flex-column sub-open">
+                    <ul class="main-menu">
+                        <li class="slide">
+                            <a href="dashboard.html" class="side-menu__item">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><path d="M133.66,34.34a8,8,0,0,0-11.32,0L40,116.69V216h64V152h48v64h64V116.69Z" opacity="0.2"/><line x1="16" y1="216" x2="240" y2="216" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><polyline points="152 216 152 152 104 152 104 216" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="40" y1="116.69" x2="40" y2="216" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="216" y1="216" x2="216" y2="116.69" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M24,132.69l98.34-98.35a8,8,0,0,1,11.32,0L232,132.69" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                                <span class="side-menu__label">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="slide">
+                            <a href="users.html" class="side-menu__item">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><circle cx="88" cy="104" r="40" opacity="0.2"/><circle cx="88" cy="104" r="40" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M16,216a64,64,0,0,1,144,0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><circle cx="168" cy="120" r="32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M131.37,203a56,56,0,0,1,89.26,0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                                <span class="side-menu__label">Users & Businesses</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <div class="main-content app-content">
+            <div class="container-fluid page-container">
+                <h1 class="page-title fw-bold mb-4">Audit History</h1>
+                
+                <!-- Filter Card -->
+                <div class="card custom-card mb-4">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="form-label">From Date</label>
+                                <input type="date" class="form-control" id="fromDate">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">To Date</label>
+                                <input type="date" class="form-control" id="toDate">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Status</label>
+                                <select class="form-control" id="statusFilter">
+                                    <option>All</option>
+                                    <option>Completed</option>
+                                    <option>In Progress</option>
+                                    <option>Failed</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-12">
+                                <button class="btn btn-primary" onclick="filterHistory()"><i class="ri-search-line"></i> Filter</button>
+                                <button class="btn btn-outline-secondary ms-2" onclick="exportHistory()"><i class="ri-download-cloud-line"></i> Export</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- History Table -->
+                <div class="card custom-card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="card-title">Complete Audit History</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Business</th>
+                                        <th>User</th>
+                                        <th>Status</th>
+                                        <th>Score</th>
+                                        <th>Issues Found</th>
+                                        <th>Details</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Dec 19, 2025</td>
+                                        <td>E-Commerce Store</td>
+                                        <td>Mike Johnson</td>
+                                        <td><span class="badge bg-info">In Progress</span></td>
+                                        <td>45%</td>
+                                        <td><span class="badge bg-warning">12 Critical</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary" onclick="showDetails(1)"><i class="ri-eye-line"></i> View</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dec 17, 2025</td>
+                                        <td>Tech Startup</td>
+                                        <td>John Doe</td>
+                                        <td><span class="badge bg-success">Completed</span></td>
+                                        <td>87%</td>
+                                        <td><span class="badge bg-danger">3 Critical</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary" onclick="showDetails(2)"><i class="ri-eye-line"></i> View</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dec 15, 2025</td>
+                                        <td>Digital Agency</td>
+                                        <td>Jane Smith</td>
+                                        <td><span class="badge bg-success">Completed</span></td>
+                                        <td>75%</td>
+                                        <td><span class="badge bg-danger">5 Critical</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary" onclick="showDetails(3)"><i class="ri-eye-line"></i> View</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dec 12, 2025</td>
+                                        <td>Marketing Firm</td>
+                                        <td>Sarah Williams</td>
+                                        <td><span class="badge bg-success">Completed</span></td>
+                                        <td>82%</td>
+                                        <td><span class="badge bg-danger">4 Critical</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary" onclick="showDetails(4)"><i class="ri-eye-line"></i> View</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dec 10, 2025</td>
+                                        <td>SaaS Platform</td>
+                                        <td>Tom Davis</td>
+                                        <td><span class="badge bg-danger">Failed</span></td>
+                                        <td>N/A</td>
+                                        <td><span class="badge bg-dark">Error</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary" onclick="showDetails(5)"><i class="ri-eye-line"></i> View</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dec 08, 2025</td>
+                                        <td>Consulting Group</td>
+                                        <td>Lisa Anderson</td>
+                                        <td><span class="badge bg-success">Completed</span></td>
+                                        <td>91%</td>
+                                        <td><span class="badge bg-danger">2 Critical</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary" onclick="showDetails(6)"><i class="ri-eye-line"></i> View</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS Bundle -->
+    <script src="../assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        function filterHistory() {
+            const fromDate = document.getElementById('fromDate').value;
+            const toDate = document.getElementById('toDate').value;
+            const status = document.getElementById('statusFilter').value;
+            alert('Filtering by: From ' + fromDate + ' to ' + toDate + ', Status: ' + status);
+        }
+
+        function exportHistory() {
+            alert('Exporting audit history...');
+        }
+
+        function showDetails(id) {
+            alert('Showing details for audit record ' + id);
+        }
+
+        // Theme mode toggle
+        document.querySelector('.layout-setting').addEventListener('click', function(e) {
+            e.preventDefault();
+            const html = document.documentElement;
+            const currentMode = html.getAttribute('data-theme-mode');
+            const newMode = currentMode === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme-mode', newMode);
+            localStorage.setItem('themeMode', newMode);
+        });
+
+        // Initialize theme from localStorage
+        const savedTheme = localStorage.getItem('themeMode') || 'light';
+        document.documentElement.setAttribute('data-theme-mode', savedTheme);
+    </script>
+</body>
+
+</html>
