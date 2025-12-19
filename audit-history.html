@@ -14,6 +14,40 @@
     <link href="assets/css/icons.css" rel="stylesheet">
     <link href="assets/libs/node-waves/waves.min.css" rel="stylesheet">
     <link href="assets/libs/simplebar/simplebar.min.css" rel="stylesheet">
+    
+    <style>
+        /* Remove dots before sidebar items */
+        .main-menu {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .main-menu li {
+            list-style: none;
+        }
+
+        .main-menu li::before {
+            display: none !important;
+        }
+        
+        /* Mobile sidebar - auto close after click */
+        @media (max-width: 991px) {
+            .app-sidebar {
+                position: fixed;
+                left: 0;
+                top: 0;
+                height: 100vh;
+                z-index: 1045;
+                background: white;
+            }
+            
+            /* Auto-close sidebar on link click */
+            .side-menu__item {
+                cursor: pointer;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -194,6 +228,23 @@
         function downloadPDF() {
             alert('PDF download would be triggered here');
         }
+        
+        // Close sidebar on mobile when a link is clicked
+        document.querySelectorAll('.side-menu__item').forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth < 992) {
+                    const html = document.documentElement;
+                    const sidebar = document.querySelector('.app-sidebar');
+                    const overlay = document.getElementById('responsive-overlay');
+
+                    html.setAttribute('data-toggled', 'close');
+                    html.removeAttribute('data-icon-overlay');
+                    overlay?.classList.remove('active');
+                    sidebar?.classList.remove('open');
+                    sidebar?.classList.remove('active');
+                }
+            });
+        });
     </script>
 </body>
 

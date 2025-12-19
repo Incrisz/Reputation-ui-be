@@ -17,6 +17,40 @@
     <link href="assets/css/icons.css" rel="stylesheet">
     <link href="assets/libs/node-waves/waves.min.css" rel="stylesheet">
     <link href="assets/libs/simplebar/simplebar.min.css" rel="stylesheet">
+    
+    <style>
+        /* Remove dots before sidebar items */
+        .main-menu {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .main-menu li {
+            list-style: none;
+        }
+
+        .main-menu li::before {
+            display: none !important;
+        }
+        
+        /* Mobile sidebar - auto close after click */
+        @media (max-width: 991px) {
+            .app-sidebar {
+                position: fixed;
+                left: 0;
+                top: 0;
+                height: 100vh;
+                z-index: 1045;
+                background: white;
+            }
+            
+            /* Auto-close sidebar on link click */
+            .side-menu__item {
+                cursor: pointer;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -206,6 +240,53 @@
             </div>
         </div>
     </div>
+    
+    <script>
+        // Close sidebar on mobile when a link is clicked
+        document.querySelectorAll('.side-menu__item').forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Check if screen is mobile (less than 992px)
+                if (window.innerWidth < 992) {
+                    const html = document.documentElement;
+                    const sidebar = document.querySelector('.app-sidebar');
+                    const header = document.querySelector('.app-header');
+                    const toggleBtn = document.querySelector('[data-bs-toggle="sidebar"]');
+
+                    // Set sidebar to closed state
+                    html.setAttribute('data-toggled', 'close');
+                    if (sidebar) {
+                        sidebar.classList.add('close');
+                        sidebar.style.display = 'none';
+                    }
+                }
+            });
+        });
+
+        // Prevent sidebar toggle button from reopening sidebar after close
+        const toggleBtn = document.querySelector('[data-bs-toggle="sidebar"]');
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const html = document.documentElement;
+                const sidebar = document.querySelector('.app-sidebar');
+                
+                // Toggle sidebar properly
+                if (html.getAttribute('data-toggled') === 'close') {
+                    html.setAttribute('data-toggled', 'open');
+                    if (sidebar) {
+                        sidebar.style.display = 'block';
+                        sidebar.classList.remove('close');
+                    }
+                } else {
+                    html.setAttribute('data-toggled', 'close');
+                    if (sidebar) {
+                        sidebar.style.display = 'none';
+                        sidebar.classList.add('close');
+                    }
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>

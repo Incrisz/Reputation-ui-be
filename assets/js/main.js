@@ -285,4 +285,68 @@
     }
   }
   localStorageBackup();
+
+  document.addEventListener("click", (event) => {
+    const menuLink = event.target.closest(".side-menu__item");
+    if (!menuLink || window.innerWidth >= 992) {
+      return;
+    }
+
+    if (typeof window.menuClose === "function") {
+      window.menuClose();
+      return;
+    }
+
+    const html = document.documentElement;
+    const overlay = document.getElementById("responsive-overlay");
+    const sidebar = document.querySelector(".app-sidebar");
+
+    html.setAttribute("data-toggled", "close");
+    html.removeAttribute("data-icon-overlay");
+    overlay?.classList.remove("active");
+    sidebar?.classList.remove("open");
+    sidebar?.classList.remove("active");
+  });
+
+  document.addEventListener(
+    "click",
+    (event) => {
+      if (window.innerWidth >= 992) {
+        return;
+      }
+
+      const toggleTrigger = event.target.closest(
+        '[data-bs-toggle="sidebar"], .sidemenu-toggle, .horizontal-navtoggle'
+      );
+      const sidebar = document.querySelector(".app-sidebar");
+
+      if (toggleTrigger || sidebar?.contains(event.target)) {
+        return;
+      }
+
+      const html = document.documentElement;
+      const overlay = document.getElementById("responsive-overlay");
+      const isOpen =
+        overlay?.classList.contains("active") ||
+        html.getAttribute("data-toggled") === "open";
+
+      if (!isOpen) {
+        return;
+      }
+
+      setTimeout(() => {
+        if (typeof window.menuClose === "function") {
+          window.menuClose();
+          return;
+        }
+
+        html.setAttribute("data-toggled", "close");
+        html.removeAttribute("data-icon-overlay");
+        overlay?.classList.remove("active");
+        sidebar?.classList.remove("open");
+        sidebar?.classList.remove("active");
+      }, 0);
+    },
+    true
+  );
 })();

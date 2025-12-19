@@ -17,6 +17,40 @@
     <link rel="stylesheet" href="assets/libs/apexcharts/apexcharts.css">
     <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
     <script src="assets/libs/echarts/echarts.min.js"></script>
+    
+    <style>
+        /* Remove dots before sidebar items */
+        .main-menu {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .main-menu li {
+            list-style: none;
+        }
+
+        .main-menu li::before {
+            display: none !important;
+        }
+        
+        /* Mobile sidebar - auto close after click */
+        @media (max-width: 991px) {
+            .app-sidebar {
+                position: fixed;
+                left: 0;
+                top: 0;
+                height: 100vh;
+                z-index: 1045;
+                background: white;
+            }
+            
+            /* Auto-close sidebar on link click */
+            .side-menu__item {
+                cursor: pointer;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -292,6 +326,23 @@
         };
         var donutChart = new ApexCharts(document.querySelector("#donutChart"), donutOptions);
         donutChart.render();
+        
+        // Close sidebar on mobile when a link is clicked
+        document.querySelectorAll('.side-menu__item').forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth < 992) {
+                    const html = document.documentElement;
+                    const sidebar = document.querySelector('.app-sidebar');
+                    const overlay = document.getElementById('responsive-overlay');
+
+                    html.setAttribute('data-toggled', 'close');
+                    html.removeAttribute('data-icon-overlay');
+                    overlay?.classList.remove('active');
+                    sidebar?.classList.remove('open');
+                    sidebar?.classList.remove('active');
+                }
+            });
+        });
     </script>
 </body>
 
