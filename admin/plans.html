@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>BizVisibility AI - User Plans</title>
+    <title>BizVisibility AI - Manage Plans</title>
     <link rel="icon" href="../assets/images/brand-logos/favicon.ico" type="image/x-icon">
     <script src="../assets/libs/choices.js/public/assets/scripts/choices.min.js"></script>
     <script src="../assets/js/main.js"></script>
@@ -95,6 +95,12 @@
                                 <span class="side-menu__label">Users & Businesses</span>
                             </a>
                         </li>
+                        <li class="slide">
+                            <a href="plans.html" class="side-menu__item">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><path d="M48,120h160V80a8,8,0,0,0-8-8H56a8,8,0,0,0-8,8Z" opacity="0.2"/><rect x="48" y="72" width="160" height="112" rx="8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M80,184v16a8,8,0,0,1-8,8H64a8,8,0,0,1-8-8v-16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M176,184v16a8,8,0,0,0,8,8h8a8,8,0,0,0,8-8v-16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="96" y1="120" x2="96" y2="168" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="160" y1="120" x2="160" y2="168" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                                <span class="side-menu__label">Plans</span>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -103,60 +109,38 @@
         <!-- Main Content -->
         <div class="main-content app-content">
             <div class="container-fluid page-container">
-                <h1 class="page-title fw-bold mb-4">User Plans Management</h1>
-                
-                <div class="card custom-card">
-                    <div class="card-header d-flex justify-content-between align-items-center">
-                        <h5 class="card-title">Active Plans</h5>
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                    <div>
+                        <h1 class="page-title fw-bold mb-0">Manage Plans</h1>
+                        <p class="text-muted">View, edit, and manage subscription plans</p>
                     </div>
-                    <div class="card-body">
+                    <button class="btn btn-primary" onclick="showAddPlanModal()"><i class="ri-add-line"></i> Add New Plan</button>
+                </div>
+
+                <!-- Plans Table -->
+                <div class="card custom-card">
+                    <div class="card-header">
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="ri-search-line"></i></span>
+                            <input type="text" class="form-control" id="searchPlans" placeholder="Search plans by name...">
+                        </div>
+                    </div>
+                    <div class="card-body p-0">
                         <div class="table-responsive">
-                            <table class="table table-hover">
+                            <table class="table table-hover mb-0">
                                 <thead>
                                     <tr>
-                                        <th>User</th>
-                                        <th>Plan Type</th>
+                                        <th>Plan Name</th>
+                                        <th>Description</th>
                                         <th>Price/Month</th>
-                                        <th>Start Date</th>
-                                        <th>Renewal Date</th>
+                                        <th>Annual Price</th>
+                                        <th>Features</th>
                                         <th>Status</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><strong>John Doe</strong></td>
-                                        <td><span class="badge bg-primary">Premium</span></td>
-                                        <td>$99.99</td>
-                                        <td>Nov 15, 2025</td>
-                                        <td>Jan 15, 2026</td>
-                                        <td><span class="badge bg-success">Active</span></td>
-                                        <td>
-                                            <button class="btn btn-sm btn-outline-primary" onclick="editPlan(1)"><i class="ri-edit-line"></i>Edit</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Jane Smith</strong></td>
-                                        <td><span class="badge bg-info">Standard</span></td>
-                                        <td>$49.99</td>
-                                        <td>Dec 01, 2025</td>
-                                        <td>Jan 01, 2026</td>
-                                        <td><span class="badge bg-success">Active</span></td>
-                                        <td>
-                                            <button class="btn btn-sm btn-outline-primary" onclick="editPlan(2)"><i class="ri-edit-line"></i>Edit</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Mike Johnson</strong></td>
-                                        <td><span class="badge bg-secondary">Free</span></td>
-                                        <td>Free</td>
-                                        <td>Oct 01, 2025</td>
-                                        <td>-</td>
-                                        <td><span class="badge bg-warning">Trial</span></td>
-                                        <td>
-                                            <button class="btn btn-sm btn-outline-primary" onclick="editPlan(3)"><i class="ri-edit-line"></i>Edit</button>
-                                        </td>
-                                    </tr>
+                                <tbody id="plansTableBody">
+                                    <!-- Plans will be populated by JavaScript -->
                                 </tbody>
                             </table>
                         </div>
@@ -165,14 +149,212 @@
             </div>
         </div>
     </div>
-    
+
+    <!-- Add/Edit Plan Modal -->
+    <div class="modal fade" id="planModal" tabindex="-1" aria-labelledby="planModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header border-bottom">
+                    <h5 class="modal-title" id="planModalLabel">Add New Plan</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="planForm">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="planName" class="form-label">Plan Name</label>
+                                <input type="text" class="form-control" id="planName" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="planStatus" class="form-label">Status</label>
+                                <select class="form-control" id="planStatus" required>
+                                    <option value="Active">Active</option>
+                                    <option value="Inactive">Inactive</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="planDescription" class="form-label">Description</label>
+                            <textarea class="form-control" id="planDescription" rows="3" placeholder="Plan description..."></textarea>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="planMonthlyPrice" class="form-label">Monthly Price ($)</label>
+                                <input type="number" class="form-control" id="planMonthlyPrice" step="0.01" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="planAnnualPrice" class="form-label">Annual Price ($)</label>
+                                <input type="number" class="form-control" id="planAnnualPrice" step="0.01" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="planFeatures" class="form-label">Features (comma-separated)</label>
+                            <textarea class="form-control" id="planFeatures" rows="3" placeholder="e.g., Up to 5 audits, Priority support, Custom reports"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="savePlan()">Save Plan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Bootstrap JS Bundle -->
     <script src="../assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
     
     <script>
-        function editPlan(id) {
-            alert('Edit plan ' + id);
+        // Sample plans data
+        let plans = {
+            1: {
+                id: 1,
+                name: "Free",
+                description: "Perfect for getting started",
+                monthlyPrice: 0,
+                annualPrice: 0,
+                features: ["Up to 2 audits", "Basic reports", "Email support"],
+                status: "Active"
+            },
+            2: {
+                id: 2,
+                name: "Standard",
+                description: "Great for small businesses",
+                monthlyPrice: 29.99,
+                annualPrice: 299.90,
+                features: ["Up to 10 audits", "Detailed reports", "Priority support", "Custom branding"],
+                status: "Active"
+            },
+            3: {
+                id: 3,
+                name: "Premium",
+                description: "For growing businesses",
+                monthlyPrice: 99.99,
+                annualPrice: 999.90,
+                features: ["Unlimited audits", "Advanced analytics", "24/7 support", "API access", "Custom reports", "Team collaboration"],
+                status: "Active"
+            }
+        };
+
+        let currentEditId = null;
+        let nextPlanId = 4;
+
+        function loadPlans() {
+            const tableBody = document.getElementById('plansTableBody');
+            tableBody.innerHTML = '';
+
+            Object.values(plans).forEach(plan => {
+                const featuresList = Array.isArray(plan.features) ? plan.features.join(', ') : plan.features;
+                const statusBadge = plan.status === 'Active' ? '<span class="badge bg-success">Active</span>' : '<span class="badge bg-secondary">Inactive</span>';
+
+                tableBody.innerHTML += `
+                    <tr>
+                        <td><strong>${plan.name}</strong></td>
+                        <td>${plan.description}</td>
+                        <td>$${plan.monthlyPrice.toFixed(2)}</td>
+                        <td>$${plan.annualPrice.toFixed(2)}</td>
+                        <td>
+                            <small>${featuresList.substring(0, 50)}${featuresList.length > 50 ? '...' : ''}</small>
+                        </td>
+                        <td>${statusBadge}</td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-primary" onclick="editPlan(${plan.id})"><i class="ri-edit-line"></i> Edit</button>
+                            <button class="btn btn-sm btn-outline-danger" onclick="deletePlan(${plan.id})"><i class="ri-delete-line"></i> Delete</button>
+                        </td>
+                    </tr>
+                `;
+            });
         }
+
+        function showAddPlanModal() {
+            currentEditId = null;
+            document.getElementById('planForm').reset();
+            document.getElementById('planModalLabel').textContent = 'Add New Plan';
+            new bootstrap.Modal(document.getElementById('planModal')).show();
+        }
+
+        function editPlan(planId) {
+            currentEditId = planId;
+            const plan = plans[planId];
+
+            if (plan) {
+                document.getElementById('planName').value = plan.name;
+                document.getElementById('planDescription').value = plan.description;
+                document.getElementById('planMonthlyPrice').value = plan.monthlyPrice;
+                document.getElementById('planAnnualPrice').value = plan.annualPrice;
+                document.getElementById('planStatus').value = plan.status;
+                document.getElementById('planFeatures').value = Array.isArray(plan.features) ? plan.features.join(', ') : plan.features;
+
+                document.getElementById('planModalLabel').textContent = 'Edit Plan';
+                new bootstrap.Modal(document.getElementById('planModal')).show();
+            }
+        }
+
+        function savePlan() {
+            const name = document.getElementById('planName').value;
+            const description = document.getElementById('planDescription').value;
+            const monthlyPrice = parseFloat(document.getElementById('planMonthlyPrice').value);
+            const annualPrice = parseFloat(document.getElementById('planAnnualPrice').value);
+            const status = document.getElementById('planStatus').value;
+            const featuresInput = document.getElementById('planFeatures').value;
+            const features = featuresInput.split(',').map(f => f.trim()).filter(f => f !== '');
+
+            if (!name || isNaN(monthlyPrice) || isNaN(annualPrice)) {
+                alert('Please fill in all required fields');
+                return;
+            }
+
+            if (currentEditId) {
+                // Update existing plan
+                plans[currentEditId] = {
+                    id: currentEditId,
+                    name,
+                    description,
+                    monthlyPrice,
+                    annualPrice,
+                    features,
+                    status
+                };
+                alert('Plan updated successfully!');
+            } else {
+                // Create new plan
+                plans[nextPlanId] = {
+                    id: nextPlanId,
+                    name,
+                    description,
+                    monthlyPrice,
+                    annualPrice,
+                    features,
+                    status
+                };
+                nextPlanId++;
+                alert('Plan created successfully!');
+            }
+
+            loadPlans();
+            bootstrap.Modal.getInstance(document.getElementById('planModal')).hide();
+        }
+
+        function deletePlan(planId) {
+            if (confirm('Are you sure you want to delete this plan?')) {
+                delete plans[planId];
+                loadPlans();
+                alert('Plan deleted successfully!');
+            }
+        }
+
+        // Search functionality
+        document.getElementById('searchPlans').addEventListener('keyup', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const rows = document.querySelectorAll('#plansTableBody tr');
+            rows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                row.style.display = text.includes(searchTerm) ? '' : 'none';
+            });
+        });
 
         // Theme mode toggle
         document.querySelector('.layout-setting').addEventListener('click', function(e) {
@@ -187,6 +369,9 @@
         // Initialize theme from localStorage
         const savedTheme = localStorage.getItem('themeMode') || 'light';
         document.documentElement.setAttribute('data-theme-mode', savedTheme);
+
+        // Load plans on page load
+        loadPlans();
     </script>
 </body>
 
