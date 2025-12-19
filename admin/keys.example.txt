@@ -1,0 +1,28 @@
+# OpenAI API Configuration
+OPENAI_API_KEY=your_openai_api_key_here
+OPENAI_MODEL=gpt-4
+OPENAI_BASE_URL=https://api.openai.com/v1/
+
+# LLM provider switch: openai or openrouter
+LLM_PROVIDER=openai
+
+# OpenRouter configuration (used when LLM_PROVIDER=openrouter)
+OPENROUTER_API_KEY=your_openrouter_api_key_here
+OPENROUTER_MODEL=anthropic/claude-3-sonnet
+OPENROUTER_BASE_URL=https://openrouter.ai/api/v1/
+OPENROUTER_SITE_URL=http://localhost:8000
+OPENROUTER_APP_TITLE="Reputation Audit API"
+
+PAGESPEED_API_KEY=your_pagespeed_api_key_here
+SERPER_API_KEY=your_serper_api_key_here
+GOOGLE_PLACES_API_KEY=your_google_places_api_key_here
+GOOGLE_AUTH_API_KEY=your_google_auth_api_key_here
+
+MAIL_MAILER=log
+MAIL_SCHEME=null
+MAIL_HOST=127.0.0.1
+MAIL_PORT=2525
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_FROM_ADDRESS="hello@example.com"
+MAIL_FROM_NAME="${APP_NAME}"
