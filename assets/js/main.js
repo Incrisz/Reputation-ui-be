@@ -286,17 +286,9 @@
   }
   localStorageBackup();
 
-  document.addEventListener("click", (event) => {
-    const menuLink = event.target.closest(".side-menu__item");
-    if (!menuLink || window.innerWidth >= 992) {
-      return;
-    }
+  const DESKTOP_BREAKPOINT = 992;
 
-    if (typeof window.menuClose === "function") {
-      window.menuClose();
-      return;
-    }
-
+  const closeMobileSidebar = () => {
     const html = document.documentElement;
     const overlay = document.getElementById("responsive-overlay");
     const sidebar = document.querySelector(".app-sidebar");
@@ -306,36 +298,95 @@
     overlay?.classList.remove("active");
     sidebar?.classList.remove("open");
     sidebar?.classList.remove("active");
+  };
+
+  const openMobileSidebar = () => {
+    const html = document.documentElement;
+    const overlay = document.getElementById("responsive-overlay");
+    const sidebar = document.querySelector(".app-sidebar");
+
+    html.setAttribute("data-toggled", "open");
+    sidebar?.classList.add("open");
+    overlay?.classList.add("active");
+  };
+
+  const toggleDesktopSidebar = () => {
+    const html = document.documentElement;
+    const isCollapsed = html.getAttribute("data-sidebar") === "collapsed";
+
+    if (isCollapsed) {
+      html.removeAttribute("data-sidebar");
+    } else {
+      html.setAttribute("data-sidebar", "collapsed");
+    }
+  };
+
+  const normalizeDesktopState = () => {
+    if (window.innerWidth < DESKTOP_BREAKPOINT) {
+      return;
+    }
+
+    const html = document.documentElement;
+    if (html.getAttribute("data-toggled") === "open") {
+      closeMobileSidebar();
+      return;
+    }
+
+    const overlay = document.getElementById("responsive-overlay");
+    const sidebar = document.querySelector(".app-sidebar");
+    overlay?.classList.remove("active");
+    sidebar?.classList.remove("open");
+    sidebar?.classList.remove("active");
+  };
+
+  window.addEventListener("resize", normalizeDesktopState);
+  normalizeDesktopState();
+
+  document.addEventListener("click", (event) => {
+    const menuLink = event.target.closest(".side-menu__item");
+    if (!menuLink || window.innerWidth >= DESKTOP_BREAKPOINT) {
+      return;
+    }
+
+    if (typeof window.menuClose === "function") {
+      window.menuClose();
+      return;
+    }
+
+    closeMobileSidebar();
   });
 
   document.addEventListener(
     "click",
     (event) => {
-      if (window.innerWidth >= 992) {
-        return;
-      }
-
       const toggleTrigger = event.target.closest(
         '[data-bs-toggle="sidebar"], .sidemenu-toggle, .horizontal-navtoggle'
       );
-      const sidebar = document.querySelector(".app-sidebar");
 
-      // Handle sidebar toggle click
+      // Handle sidebar toggle click - works on desktop and mobile
       if (toggleTrigger) {
         event.preventDefault();
-        const html = document.documentElement;
-        const currentToggled = html.getAttribute("data-toggled");
-        
-        if (currentToggled === "open") {
-          html.setAttribute("data-toggled", "close");
-          sidebar?.classList.remove("open");
+        if (window.innerWidth >= DESKTOP_BREAKPOINT) {
+          toggleDesktopSidebar();
         } else {
-          html.setAttribute("data-toggled", "open");
-          sidebar?.classList.add("open");
+          const html = document.documentElement;
+          const currentToggled = html.getAttribute("data-toggled");
+
+          if (currentToggled === "open") {
+            closeMobileSidebar();
+          } else {
+            openMobileSidebar();
+          }
         }
         return;
       }
 
+      // Only close sidebar on mobile when clicking outside
+      if (window.innerWidth >= DESKTOP_BREAKPOINT) {
+        return;
+      }
+
+      const sidebar = document.querySelector(".app-sidebar");
       if (sidebar?.contains(event.target)) {
         return;
       }
@@ -356,11 +407,7 @@
           return;
         }
 
-        html.setAttribute("data-toggled", "close");
-        html.removeAttribute("data-icon-overlay");
-        overlay?.classList.remove("active");
-        sidebar?.classList.remove("open");
-        sidebar?.classList.remove("active");
+        closeMobileSidebar();
       }, 0);
     },
     true
