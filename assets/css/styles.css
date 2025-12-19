@@ -9198,7 +9198,7 @@ button {
 }
 @media (max-width: 991.98px) {
   .main-content {
-    padding-block-start: 5.25rem;
+    padding-block-start: 6rem;
   }
 }
 .bd-example > .dropdown-menu {
@@ -12561,7 +12561,7 @@ ul.search-results-list .dropdown li {
 @media (max-width: 992px) {
   .main-content.app-content {
     padding-inline: 1rem !important;
-    padding-block-start: 5rem !important;
+    padding-block-start: 6rem !important;
   }
 }
 @media (max-width: 576px) {
@@ -20100,7 +20100,7 @@ ul.widgets-transactions-list li:last-child {
     display: block;
   }
   .main-content {
-    padding-block-start: 5.25rem;
+    padding-block-start: 6rem;
   }
   .main-sidebar-header {
     display: none !important;
@@ -20118,6 +20118,10 @@ ul.widgets-transactions-list li:last-child {
 @media (max-width: 991.98px) {
   [data-toggled=open] .app-sidebar .main-sidebar-header {
     display: flex !important;
+  }
+  [data-toggled=open] .app-sidebar .main-sidebar {
+    margin-block-start: 4.25rem;
+    height: calc(100vh - 4.25rem);
   }
 }
 .slide-left,
