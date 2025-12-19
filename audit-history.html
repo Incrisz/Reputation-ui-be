@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" data-nav-layout="vertical" data-theme-mode="light" data-header-styles="transparent" data-width="fullwidth" data-menu-styles="transparent" data-page-style="flat">
+<html lang="en" dir="ltr" data-nav-layout="vertical" data-theme-mode="light" data-header-styles="transparent" data-width="fullwidth" data-menu-styles="transparent" data-page-style="flat" data-toggled="close">
 
 <head>
     <meta charset="UTF-8">
@@ -14,40 +14,6 @@
     <link href="assets/css/icons.css" rel="stylesheet">
     <link href="assets/libs/node-waves/waves.min.css" rel="stylesheet">
     <link href="assets/libs/simplebar/simplebar.min.css" rel="stylesheet">
-    
-    <style>
-        /* Remove dots before sidebar items */
-        .main-menu {
-            list-style: none;
-            padding-left: 0;
-            margin: 0;
-        }
-
-        .main-menu li {
-            list-style: none;
-        }
-
-        .main-menu li::before {
-            display: none !important;
-        }
-        
-        /* Mobile sidebar - auto close after click */
-        @media (max-width: 991px) {
-            .app-sidebar {
-                position: fixed;
-                left: 0;
-                top: 0;
-                height: 100vh;
-                z-index: 1045;
-                background: white;
-            }
-            
-            /* Auto-close sidebar on link click */
-            .side-menu__item {
-                cursor: pointer;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -55,18 +21,74 @@
         <!-- Header -->
         <header class="app-header sticky">
             <div class="main-header-container container-fluid">
+                <!-- Left side: Logo and Hamburger -->
                 <div class="header-content-left">
-                    <a href="dashboard.html" class="header-logo">
-                        <img src="assets/images/brand-logos/desktop-logo.png" alt="logo" class="desktop-logo">
-                    </a>
+                    <div class="header-element">
+                        <div class="horizontal-logo">
+                            <a href="dashboard.html" class="header-logo">
+                                <img src="assets/images/brand-logos/desktop-logo.png" alt="logo" class="desktop-logo">
+                                <img src="assets/images/brand-logos/desktop-dark.png" alt="logo" class="desktop-dark">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="header-element">
+                        <a aria-label="Hide Sidebar" class="sidemenu-toggle header-link animated-arrow hor-toggle horizontal-navtoggle" data-bs-toggle="sidebar" href="javascript:void(0);"><span></span></a>
+                    </div>
                 </div>
+                
+                <!-- Right side: Icons and Profile -->
                 <ul class="header-content-right">
-                    <li class="header-element dropdown">
-                        <a href="javascript:void(0);" class="header-link dropdown-toggle" id="mainHeaderProfile" data-bs-toggle="dropdown">
-                            <img src="assets/images/faces/12.jpg" alt="img" class="header-link-icon">
+                    <!-- Dark Mode Toggle -->
+                    <li class="header-element header-theme-mode">
+                        <a href="javascript:void(0);" class="header-link layout-setting">
+                            <span class="light-layout">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="header-link-icon" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><path d="M108.11,28.11A96.09,96.09,0,0,0,227.89,147.89,96,96,0,1,1,108.11,28.11Z" opacity="0.2"/><path d="M108.11,28.11A96.09,96.09,0,0,0,227.89,147.89,96,96,0,1,1,108.11,28.11Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                            </span>
+                            <span class="dark-layout">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="header-link-icon" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><circle cx="128" cy="128" r="56" opacity="0.2"/><line x1="128" y1="40" x2="128" y2="32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><circle cx="128" cy="128" r="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="64" y1="64" x2="56" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="64" y1="192" x2="56" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="192" y1="64" x2="200" y2="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="192" y1="192" x2="200" y2="200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="40" y1="128" x2="32" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="128" y1="216" x2="128" y2="224" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="216" y1="128" x2="224" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                            </span>
                         </a>
-                        <div class="main-header-dropdown dropdown-menu dropdown-menu-end">
-                            <a href="login.html" class="dropdown-item"><i class="ri-logout-box-line me-2"></i>Logout</a>
+                    </li>
+
+                    <!-- Profile Dropdown -->
+                    <li class="header-element dropdown">
+                        <a href="javascript:void(0);" class="header-link dropdown-toggle" id="mainHeaderProfile" data-bs-toggle="dropdown" data-bs-auto-close="outside">
+                            <div>
+                                <img src="assets/images/faces/12.jpg" alt="img" class="header-link-icon">
+                            </div>
+                        </a>
+                        <div class="main-header-dropdown dropdown-menu pt-0 overflow-hidden header-profile-dropdown dropdown-menu-end" aria-labelledby="mainHeaderProfile">
+                            <div class="p-3 bg-primary text-fixed-white">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <p class="mb-0 fs-16">Profile</p>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <div class="p-3">
+                                <div class="d-flex align-items-start gap-2">
+                                    <div class="lh-1">
+                                        <span class="avatar avatar-sm bg-primary-transparent avatar-rounded">
+                                            <img src="assets/images/faces/12.jpg" alt="">
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span class="d-block fw-semibold lh-1">User Name</span>
+                                        <span class="text-muted fs-12">user@bizvisibility.com</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <ul class="list-unstyled mb-0">
+                                <li>
+                                    <a class="dropdown-item d-flex align-items-center" href="profile.html"><i class="ri-user-circle-line me-2"></i>View Profile</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item d-flex align-items-center" href="profile-settings.html"><i class="ri-settings-gear-line me-2"></i>Account Settings</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item d-flex align-items-center" href="login.html"><i class="ri-logout-box-line me-2"></i>Log Out</a>
+                                </li>
+                            </ul>
                         </div>
                     </li>
                 </ul>
@@ -74,42 +96,44 @@
         </header>
         
         <!-- Sidebar -->
-        <aside class="app-sidebar sticky">
+        <aside class="app-sidebar sticky" id="sidebar">
             <div class="main-sidebar-header">
                 <a href="dashboard.html" class="header-logo">
-                    <img src="assets/images/brand-logos/desktop-logo.png" alt="logo">
+                    <img src="assets/images/brand-logos/desktop-logo.png" alt="logo" class="desktop-logo">
+                    <img src="assets/images/brand-logos/desktop-dark.png" alt="logo" class="desktop-dark">
                 </a>
             </div>
-            <div class="main-sidebar">
-                <nav class="main-menu-container">
+            
+            <div class="main-sidebar" id="sidebar-scroll">
+                <nav class="main-menu-container nav nav-pills flex-column sub-open">
                     <ul class="main-menu">
                         <li class="slide">
                             <a href="dashboard.html" class="side-menu__item">
-                                <i class="ri-dashboard-line side-menu__icon"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><path d="M133.66,34.34a8,8,0,0,0-11.32,0L40,116.69V216h64V152h48v64h64V116.69Z" opacity="0.2"/><line x1="16" y1="216" x2="240" y2="216" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><polyline points="152 216 152 152 104 152 104 216" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="40" y1="116.69" x2="40" y2="216" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="216" y1="216" x2="216" y2="116.69" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M24,132.69l98.34-98.35a8,8,0,0,1,11.32,0L232,132.69" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
                                 <span class="side-menu__label">Dashboard</span>
                             </a>
                         </li>
                         <li class="slide">
                             <a href="start-audit.html" class="side-menu__item">
-                                <i class="ri-play-circle-line side-menu__icon"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><polygon points="216 216 80 216 160 24 216 216" opacity="0.2"/><polyline points="16 216 80 40 160 24 240 216" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
                                 <span class="side-menu__label">Start Audit</span>
                             </a>
                         </li>
-                        <li class="slide active">
+                        <li class="slide">
                             <a href="audit-history.html" class="side-menu__item">
-                                <i class="ri-history-line side-menu__icon"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><circle cx="128" cy="128" r="96" opacity="0.2"/><circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><polyline points="128 72 128 128 176 168" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
                                 <span class="side-menu__label">Audit History</span>
                             </a>
                         </li>
                         <li class="slide">
                             <a href="pricing-app.html" class="side-menu__item">
-                                <i class="ri-price-tag-line side-menu__icon"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><path d="M224,80H160v96a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V80H32a8,8,0,0,1,0-16H224a8,8,0,0,1,0,16Z" opacity="0.2"/><line x1="80" y1="40" x2="80" y2="80" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="128" y1="40" x2="128" y2="80" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="176" y1="40" x2="176" y2="80" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><rect x="40" y="80" width="176" height="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
                                 <span class="side-menu__label">Pricing</span>
                             </a>
                         </li>
                         <li class="slide">
                             <a href="javascript:void(0);" class="side-menu__item">
-                                <i class="ri-customer-service-line side-menu__icon"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><circle cx="128" cy="96" r="36" opacity="0.2"/><circle cx="128" cy="96" r="36" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M216,160c0,32-37.25,56-88,56s-88-24-88-56m32-16a20,20,0,1,1,20-20A20,20,0,0,1,160,144Z" opacity="0.2"/><circle cx="188" cy="128" r="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M216,160c0,32-37.25,56-88,56s-88-24-88-56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><circle cx="128" cy="96" r="36" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
                                 <span class="side-menu__label">Support</span>
                             </a>
                         </li>
@@ -234,17 +258,24 @@
             link.addEventListener('click', function() {
                 if (window.innerWidth < 992) {
                     const html = document.documentElement;
-                    const sidebar = document.querySelector('.app-sidebar');
-                    const overlay = document.getElementById('responsive-overlay');
-
                     html.setAttribute('data-toggled', 'close');
-                    html.removeAttribute('data-icon-overlay');
-                    overlay?.classList.remove('active');
-                    sidebar?.classList.remove('open');
-                    sidebar?.classList.remove('active');
                 }
             });
         });
+
+        // Theme mode toggle
+        document.querySelector('.layout-setting').addEventListener('click', function(e) {
+            e.preventDefault();
+            const html = document.documentElement;
+            const currentMode = html.getAttribute('data-theme-mode');
+            const newMode = currentMode === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme-mode', newMode);
+            localStorage.setItem('themeMode', newMode);
+        });
+
+        // Initialize theme from localStorage
+        const savedTheme = localStorage.getItem('themeMode') || 'light';
+        document.documentElement.setAttribute('data-theme-mode', savedTheme);
     </script>
 </body>
 
