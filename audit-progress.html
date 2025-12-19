@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>BizVisibility AI - Start Audit</title>
+    <title>BizVisibility AI - Audit Progress</title>
     <link rel="icon" href="assets/images/brand-logos/favicon.ico" type="image/x-icon">
     <script src="assets/libs/choices.js/public/assets/scripts/choices.min.js"></script>
     <script src="assets/js/main.js"></script>
@@ -161,215 +161,150 @@
         <!-- Main Content -->
         <div class="main-content app-content">
             <div class="container-fluid page-container">
-                <h1 class="page-title fw-bold mb-4">Start Your Business Audit</h1>
-                
-                <div class="row">
-                    <div class="col-lg-8 offset-lg-2">
-                        <!-- Progress Bar -->
-                        <div class="mb-5">
-                            <div class="progress" style="height: 3px;">
-                                <div class="progress-bar" role="progressbar" style="width: 25%;" id="progressBar"></div>
-                            </div>
-                            <div class="row text-center mt-4">
-                                <div class="col-3">
-                                    <small class="fw-semibold step-label" id="step1Label">Business Info</small>
+                <div class="row justify-content-center">
+                    <div class="col-xl-7 col-lg-8">
+                        <div class="card custom-card">
+                            <div class="card-body p-5">
+                                <div class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-3 mb-3">
+                                    <div>
+                                        <h1 class="page-title fw-bold mb-1">Running Your Audit</h1>
+                                        <p class="text-muted mb-0">We are gathering signals across your web presence.</p>
+                                    </div>
+                                    <span class="badge bg-primary-transparent text-primary">Live Scan</span>
                                 </div>
-                                <div class="col-3">
-                                    <small class="fw-semibold step-label text-muted" id="step2Label">Website</small>
+                                <div class="progress progress-animate mb-4" style="height: 6px;">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated" id="auditProgressBar" role="progressbar" style="width: 8%;" aria-valuenow="8" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
-                                <div class="col-3">
-                                    <small class="fw-semibold step-label text-muted" id="step3Label">Social Media</small>
-                                </div>
-                                <div class="col-3">
-                                    <small class="fw-semibold step-label text-muted" id="step4Label">Review</small>
+                                <ul class="list-unstyled audit-progress-steps mb-4" id="auditSteps">
+                                    <li class="audit-step is-active">
+                                        <span class="audit-step-icon">
+                                            <i class="ri-check-line audit-icon-done"></i>
+                                            <span class="spinner-border spinner-border-sm text-primary audit-icon-active" role="status" aria-hidden="true"></span>
+                                            <i class="ri-time-line audit-icon-pending"></i>
+                                        </span>
+                                        <div class="flex-fill">
+                                            <div class="fw-semibold">Pulling website info</div>
+                                            <div class="text-muted fs-12">Crawl, metadata, and performance snapshot.</div>
+                                        </div>
+                                        <span class="badge bg-primary-transparent text-primary audit-step-badge">In progress</span>
+                                    </li>
+                                    <li class="audit-step is-pending">
+                                        <span class="audit-step-icon">
+                                            <i class="ri-check-line audit-icon-done"></i>
+                                            <span class="spinner-border spinner-border-sm text-primary audit-icon-active" role="status" aria-hidden="true"></span>
+                                            <i class="ri-time-line audit-icon-pending"></i>
+                                        </span>
+                                        <div class="flex-fill">
+                                            <div class="fw-semibold">Gathering social media signals</div>
+                                            <div class="text-muted fs-12">Mentions, engagement, and brand sentiment.</div>
+                                        </div>
+                                        <span class="badge bg-light text-muted audit-step-badge">Pending</span>
+                                    </li>
+                                    <li class="audit-step is-pending">
+                                        <span class="audit-step-icon">
+                                            <i class="ri-check-line audit-icon-done"></i>
+                                            <span class="spinner-border spinner-border-sm text-primary audit-icon-active" role="status" aria-hidden="true"></span>
+                                            <i class="ri-time-line audit-icon-pending"></i>
+                                        </span>
+                                        <div class="flex-fill">
+                                            <div class="fw-semibold">Checking Google Business Profile</div>
+                                            <div class="text-muted fs-12">Reviews, ratings, and listing health.</div>
+                                        </div>
+                                        <span class="badge bg-light text-muted audit-step-badge">Pending</span>
+                                    </li>
+                                </ul>
+                                <div class="d-flex flex-column flex-sm-row align-items-start align-items-sm-center justify-content-between gap-2">
+                                    <div class="text-muted fs-13" id="auditStatusText" aria-live="polite">Starting the audit... </div>
+                                    <a href="audit-results.html" class="btn btn-primary btn-sm d-none" id="viewResultsBtn">View Results</a>
                                 </div>
                             </div>
                         </div>
-                        
-                        <form id="auditForm">
-                            <!-- Step 1: Business Info -->
-                            <div class="form-step" id="step1">
-                                <div class="card custom-card mb-4">
-                                    <div class="card-body p-5">
-                                        <h4 class="fw-semibold mb-4">Business Information</h4>
-                                        
-                                        <div class="mb-3">
-                                            <label class="form-label fw-medium">Business Name</label>
-                                            <input type="text" class="form-control" name="businessName" required>
-                                        </div>
-                                        
-                                        <div class="mb-3">
-                                            <label class="form-label fw-medium">Industry</label>
-                                            <select class="form-control" name="industry" required>
-                                                <option>Select Industry</option>
-                                                <option>Technology</option>
-                                                <option>Retail</option>
-                                                <option>Healthcare</option>
-                                                <option>Finance</option>
-                                                <option>Other</option>
-                                            </select>
-                                        </div>
-                                        
-                                        <div class="mb-3">
-                                            <label class="form-label fw-medium">Website URL</label>
-                                            <input type="url" class="form-control" name="website" required>
-                                        </div>
-                                        
-                                        <div class="mb-3">
-                                            <label class="form-label fw-medium">Location</label>
-                                            <input type="text" class="form-control" name="location" placeholder="City, Country" required>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Step 2: Website Analysis -->
-                            <div class="form-step" id="step2" style="display:none;">
-                                <div class="card custom-card mb-4">
-                                    <div class="card-body p-5">
-                                        <h4 class="fw-semibold mb-4">Website Analysis</h4>
-                                        <p class="text-muted mb-4">We'll analyze your website for SEO, performance, and user experience</p>
-                                        
-                                        <div class="form-check mb-3">
-                                            <input class="form-check-input" type="checkbox" name="seo" id="seo">
-                                            <label class="form-check-label" for="seo">Analyze SEO Performance</label>
-                                        </div>
-                                        
-                                        <div class="form-check mb-3">
-                                            <input class="form-check-input" type="checkbox" name="speed" id="speed">
-                                            <label class="form-check-label" for="speed">Check Page Speed</label>
-                                        </div>
-                                        
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" name="mobile" id="mobile">
-                                            <label class="form-check-label" for="mobile">Mobile Responsiveness</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Step 3: Social Media -->
-                            <div class="form-step" id="step3" style="display:none;">
-                                <div class="card custom-card mb-4">
-                                    <div class="card-body p-5">
-                                        <h4 class="fw-semibold mb-4">Social Media Presence</h4>
-                                        
-                                        <div class="mb-3">
-                                            <label class="form-label fw-medium">Facebook URL</label>
-                                            <input type="url" class="form-control" name="facebook" placeholder="https://facebook.com/yourpage">
-                                        </div>
-                                        
-                                        <div class="mb-3">
-                                            <label class="form-label fw-medium">Instagram Handle</label>
-                                            <input type="text" class="form-control" name="instagram" placeholder="@yourhandle">
-                                        </div>
-                                        
-                                        <div class="mb-3">
-                                            <label class="form-label fw-medium">LinkedIn URL</label>
-                                            <input type="url" class="form-control" name="linkedin" placeholder="https://linkedin.com/company/yourcompany">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Step 4: Review -->
-                            <div class="form-step" id="step4" style="display:none;">
-                                <div class="card custom-card mb-4">
-                                    <div class="card-body p-5">
-                                        <h4 class="fw-semibold mb-4">Review Your Information</h4>
-                                        <div id="reviewContent" class="text-muted">Loading...</div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Navigation Buttons -->
-                            <div class="d-flex gap-2 justify-content-between">
-                                <button type="button" class="btn btn-light" id="prevBtn" onclick="previousStep()" style="display:none;">
-                                    <i class="ri-arrow-left-line me-2"></i>Previous
-                                </button>
-                                <button type="button" class="btn btn-primary" id="nextBtn" onclick="nextStep()">
-                                    Next<i class="ri-arrow-right-line ms-2"></i>
-                                </button>
-                                <button type="submit" class="btn btn-success" id="submitBtn" style="display:none;">
-                                    <i class="ri-check-line me-2"></i>Start Audit Now
-                                </button>
-                            </div>
-                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
+
     <!-- Bootstrap JS Bundle -->
     <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
     
     <script>
-        let currentStep = 1;
-        const totalSteps = 4;
-        
-        function showStep(step) {
-            // Hide all steps
-            for (let i = 1; i <= totalSteps; i++) {
-                document.getElementById('step' + i).style.display = 'none';
-                document.getElementById('step' + i + 'Label').classList.add('text-muted');
-                document.getElementById('step' + i + 'Label').classList.remove('text-primary');
+        const steps = [
+            {
+                progress: 35,
+                status: "Pulling website info..."
+            },
+            {
+                progress: 70,
+                status: "Gathering social media signals..."
+            },
+            {
+                progress: 100,
+                status: "Checking Google Business Profile..."
             }
-            
-            // Show current step
-            document.getElementById('step' + step).style.display = 'block';
-            document.getElementById('step' + step + 'Label').classList.remove('text-muted');
-            document.getElementById('step' + step + 'Label').classList.add('text-primary');
-            
-            // Update progress bar
-            document.getElementById('progressBar').style.width = (step * 25) + '%';
-            
-            // Show/hide buttons
-            document.getElementById('prevBtn').style.display = step > 1 ? 'block' : 'none';
-            document.getElementById('nextBtn').style.display = step < totalSteps ? 'block' : 'none';
-            document.getElementById('submitBtn').style.display = step === totalSteps ? 'block' : 'none';
-            
-            currentStep = step;
+        ];
+        const stepDurations = [2200, 2400, 2600];
+
+        const stepEls = Array.from(document.querySelectorAll(".audit-step"));
+        const progressBar = document.getElementById("auditProgressBar");
+        const statusText = document.getElementById("auditStatusText");
+        const viewResultsBtn = document.getElementById("viewResultsBtn");
+
+        function setStepState(index, state) {
+            const stepEl = stepEls[index];
+            if (!stepEl) {
+                return;
+            }
+
+            stepEl.classList.remove("is-pending", "is-active", "is-done");
+            stepEl.classList.add(`is-${state}`);
+
+            const badge = stepEl.querySelector(".audit-step-badge");
+            if (!badge) {
+                return;
+            }
+
+            if (state === "active") {
+                badge.textContent = "In progress";
+                badge.className = "badge bg-primary-transparent text-primary audit-step-badge";
+            } else if (state === "done") {
+                badge.textContent = "Complete";
+                badge.className = "badge bg-success-transparent text-success audit-step-badge";
+            } else {
+                badge.textContent = "Pending";
+                badge.className = "badge bg-light text-muted audit-step-badge";
+            }
         }
-        
-        function nextStep() {
-            if (currentStep < totalSteps) {
-                if (currentStep === totalSteps - 1) {
-                    generateReview();
+
+        function updateProgress(value) {
+            progressBar.style.width = `${value}%`;
+            progressBar.setAttribute("aria-valuenow", value);
+        }
+
+        function runStep(index) {
+            setStepState(index, "active");
+            statusText.textContent = steps[index].status;
+            updateProgress(steps[index].progress);
+
+            setTimeout(() => {
+                setStepState(index, "done");
+
+                if (index + 1 < steps.length) {
+                    runStep(index + 1);
+                    return;
                 }
-                showStep(currentStep + 1);
-            }
+
+                statusText.textContent = "Audit complete. Review your results.";
+                progressBar.classList.remove("progress-bar-animated");
+                viewResultsBtn.classList.remove("d-none");
+            }, stepDurations[index]);
         }
-        
-        function previousStep() {
-            if (currentStep > 1) {
-                showStep(currentStep - 1);
-            }
-        }
-        
-        function generateReview() {
-            const form = document.getElementById('auditForm');
-            const formData = new FormData(form);
-            const review = `
-                <div class="row">
-                    <div class="col-md-6">
-                        <p><strong>Business Name:</strong> ${formData.get('businessName')}</p>
-                        <p><strong>Industry:</strong> ${formData.get('industry')}</p>
-                        <p><strong>Website:</strong> ${formData.get('website')}</p>
-                    </div>
-                    <div class="col-md-6">
-                        <p><strong>Location:</strong> ${formData.get('location')}</p>
-                    </div>
-                </div>
-            `;
-            document.getElementById('reviewContent').innerHTML = review;
-        }
-        
-        document.getElementById('auditForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            window.location.href = 'audit-progress.html';
-        });
-        
+
+        stepEls.forEach((_, i) => setStepState(i, i === 0 ? "active" : "pending"));
+        statusText.textContent = steps[0].status;
+        updateProgress(steps[0].progress);
+        setTimeout(() => runStep(0), 400);
+
         // Close sidebar on mobile when a link is clicked
         document.querySelectorAll('.side-menu__item').forEach(link => {
             link.addEventListener('click', function() {
@@ -394,8 +329,6 @@
         // Initialize theme from localStorage
         const savedTheme = localStorage.getItem('themeMode') || 'light';
         document.documentElement.setAttribute('data-theme-mode', savedTheme);
-        
-        showStep(1);
     </script>
 </body>
 

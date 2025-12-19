@@ -9,7 +9,9 @@ Our AI-powered app checks how easy it is to find a business online and how well 
 
 
 
-add profile and sign out to the buttom page of the sidebar
 
-when i click on start audit on the Start Your Business Audit
-after filling the form it should take me to a page with progessive bar that will show the process when its pulling website info then social media , then google business profile then 
+
+
+we're changing the #985ffd color to #dd9933 and also making it gradient 
+
+create an admin folder and create files for the admin dashboard , admin should be able to view  users , view/edit their plans, view edit users audit and audit history 

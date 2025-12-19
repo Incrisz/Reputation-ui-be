@@ -19845,6 +19845,47 @@ ul.widgets-transactions-list li:last-child {
   margin: 0;
   padding: 0;
 }
+.audit-progress-steps .audit-step {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--default-border);
+  border-radius: 0.75rem;
+  background: var(--custom-white, #fff);
+}
+.audit-progress-steps .audit-step + .audit-step {
+  margin-top: 0.75rem;
+}
+.audit-step-icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary01);
+  color: var(--primary-color);
+  flex: 0 0 auto;
+}
+.audit-step.is-pending .audit-step-icon {
+  background: rgb(var(--light-rgb));
+  color: var(--default-text-color);
+}
+.audit-step .audit-icon-done,
+.audit-step .audit-icon-active,
+.audit-step .audit-icon-pending {
+  display: none;
+}
+.audit-step.is-done .audit-icon-done {
+  display: inline-flex;
+}
+.audit-step.is-active .audit-icon-active {
+  display: inline-flex;
+}
+.audit-step.is-pending .audit-icon-pending {
+  display: inline-flex;
+}
 [data-nav-layout=vertical] .app-sidebar {
   height: 100%;
 }
